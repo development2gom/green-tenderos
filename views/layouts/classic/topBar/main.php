@@ -21,8 +21,6 @@ AppAsset::register($this);
   
   <?=$this->render("//components/classic/topbar/nav-bar")?>
 
-  <?=$this->render("//components/classic/topbar/menu")?>
-
   <?=$this->render("//components/classic/topbar/body", ["content"=>$content])?>
   
 
