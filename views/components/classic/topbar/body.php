@@ -1,7 +1,7 @@
 <!-- Page -->
 <div class="page">
-  <div class="page-content">
-    <?=$content?>
+    <div class="page-content">
+      <?=$content?>
+    </div>
   </div>
-</div>
-<!-- End Page -->
+  <!-- End Page -->

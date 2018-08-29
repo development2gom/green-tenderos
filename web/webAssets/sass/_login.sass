@@ -4,6 +4,77 @@
 	---------------------------------------
 	*/
 
+// .page-login-v2
+// 	.page-brand-info .brand-img
+// .page-dark.layout-full
+// 	.brand
+// 		.brand-img
+
+.page-login-v2
+	.page-login-mains
+		position: absolute
+		left: 0
+		top: 0
+		height: auto
+		min-height: 100%
+		padding: 60px 60px 40px
+		color: #76838f
+		background: $white
+		// width: 470px
+
+		.login-title
+			@extend .fs-26
+			@extend .fw-light
+			margin-bottom: 0
+
+		.login-title-p
+			@extend .fs-15
+			@extend .fw-thin
+
+		.brand
+			align-items: center
+			display: flex
+			flex-direction: column
+			justify-content: center
+			margin-bottom: 10vh
+			width: 100%
+			.brand-img-xs
+				max-width: 80%
+				width: 120px
+			h3
+				color: $secondary
+				@extend .fs-24
+				@extend .fw-bold
+				@extend .text-up
+
+	.page-brand-info
+		// background-color: red
+		margin: 220px 90px 0 100px
+		.brand-img
+			max-width: 80%
+			width: 280px
+		
+	.page-content
+		padding-right: 24px
+		padding-left: 520px
+
+	footer
+		margin: 50px 60px 12px 60px
+		.ayuda-soporte
+			align-items: center
+			display: flex
+			flex-wrap: wrap
+			@extend .fs-15
+			justify-content: flex-end
+			span
+				color: $font-color
+				display: flex
+				@extend .fs-14
+			a
+				display: flex
+				@extend .fs-14
+				margin-left: 4px
+
 /*  Login
 	============================== */
 body.login-page
@@ -11,51 +82,47 @@ body.login-page
 		.panel-body
 			padding: 32px 32px 24px
 
-			.ayuda-soporte
-				align-items: center
-				display: flex
-				flex-direction: column
-				@extend .fs-15
-				justify-content: center
-				span
-					color: $font-color
-					display: block
-					@extend .fs-16
-				a
-					@extend .fs-15
+			
 	form
 		margin: 32px 0 16px
 
-.form-group
-	&.has-error
-		.help-block
-			color: $error
-			@extend .fs-14
-			margin-top: 4px
-			text-align: left
+		.form-group
 
-	&.form-group-actions
-		margin-top: 16px
+			.control-label
+				@extend .fs-15
+				@extend .fw-light
+				// @extend .fs-italic
 
-	&.olvide-contrasena
-		justify-content: flex-end
-		margin-top: 12px
-		text-align: right 
-		a
-			@extend .fs-15
+			&.has-error
+				.help-block
+					color: $error
+					@extend .fs-14
+					margin-top: 4px
+					text-align: left
 
-	&.necesito-cuenta
-		color: rgba($white,.85)
-		justify-content: center
-		margin-top: 16px
-		a
-			@extend .fs-16
+			&.form-group-actions
+				margin-top: 16px
 
-	&.olvide-contrasena,
-	&.necesito-cuenta
-		display: flex
-		a
-			margin-left: 0
+			&.olvide-contrasena
+				justify-content: flex-end
+				margin-top: 12px
+				text-align: right 
+				a
+					@extend .fs-15
+
+			&.necesito-cuenta
+				color: rgba($white,.85)
+				justify-content: center
+				margin-top: 16px
+				a
+					@extend .fs-16
+
+			&.olvide-contrasena,
+			&.necesito-cuenta
+				display: flex
+				a
+					margin-left: 0
+
 
 
 // Form material

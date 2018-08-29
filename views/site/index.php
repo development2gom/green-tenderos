@@ -4,7 +4,7 @@ use yii\helpers\Url;
 
 $this->title = "Dashboard";
 
-$this->params['classBody'] = "site-navbar-small dashboard";
+$this->params['classBody'] = "site-navbar-small site-top dashboard";
 ?>
 
 <div class="pane">
