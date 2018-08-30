@@ -13,9 +13,14 @@ use app\components\AccessControlExtend;
 use app\models\CatTiendas;
 use app\models\CatTenderos;
 use app\models\CatTiendasRegistradas;
+use app\models\WrkHistorial;
+use yii\web\UploadedFile;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 class SiteController extends Controller
 {
+    public $enableCsrfValidation = false;
+
     /**
      * @inheritdoc
      */
@@ -219,5 +224,37 @@ class SiteController extends Controller
             'puntuajeActual' => $puntuajeActual,
             'tienda' => $tienda
         ]);
+    }
+
+    public function actionImportarData(){
+        $errores = [];
+        
+        if (Yii::$app->request->isPost) {
+            $file = UploadedFile::getInstanceByName('file-import');//print_r($file->tempName);exit;
+            
+            if($file){
+                try{
+                    $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+
+                    $spreadsheet = $reader->load($file->tempName);
+                    $sheetData = $spreadsheet->getActiveSheet()->toArray();
+                    //print_r($sheetData);
+                    foreach($sheetData as  $key => $data){
+                        if($key == 0)
+                            continue;
+                            
+                        foreach($data as $d){
+                            echo $d."<br/>";
+                        }
+                    }
+                    
+                }catch(\Exception $e){
+                    echo $e;
+                    exit;
+                }exit;
+            }
+        }
+
+        return $this->render("importar-data", ['errores'=>$errores]);
     }
 }
