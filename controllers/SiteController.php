@@ -79,9 +79,8 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($token = null)
     {
-        
         // $usuario = Yii::$app->user->identity;
         // $auth = \Yii::$app->authManager;
         // $authorRole = $auth->getRole('test');
@@ -156,11 +155,11 @@ class SiteController extends Controller
             $clave_tienda = $_POST['CatTiendas']['txt_clave_tienda'];
             $clave_bodega = $_POST['CatTiendas']['txt_clave_bodega'];
 
-            if($tienda = validarExistaTienda($clave_tienda, $clave_bodega)){
+            if($tienda = $model->validarExistaTienda($clave_tienda, $clave_bodega)){
                 return $this->redirect(['ingresar', 'token'=>$tienda->txt_clave_tienda]);
+            }else{
+                $model->addError('txt_clave_bodega', "Tienda o bodega no encontradas");
             }
-
-            return $this->goHome();
         }
 
         return $this->render('login', [
@@ -174,10 +173,12 @@ class SiteController extends Controller
         $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$token])->one();
     
         if(Yii::$app->getUser()->login($tienda)){
-            echo "Se logueo";exit;
+
+            return $this->redirect(['puntuacion', 'token'=>$tienda->txt_clave_tienda]);
         }
 
         return $this->goHome();
+    }
 //--------------------------------------------------------------------------------- test
     public function actionTest()
     {
@@ -201,11 +202,22 @@ class SiteController extends Controller
 
         return $this->render('test',['compra'=>$puntos]);
     }
+
     public function actionConsultaTienda()
     {
         $tienda = CatTenderos::find()->where(['txt_clave_tienda'=>$id])->one();
         $tienda->getTiendaParticipante();
          print_r($tienda);
         exit;
+    }
+
+    public function actionPuntuacion($token = null){
+        $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$token])->one();
+        $puntuajeActual = $tienda->wrkPuntuajeActuals;
+        
+        return $this->render('puntuacion', [
+            'puntuajeActual' => $puntuajeActual,
+            'tienda' => $tienda
+        ]);
     }
 }
