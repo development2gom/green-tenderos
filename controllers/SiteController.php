@@ -11,6 +11,8 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\components\AccessControlExtend;
 use app\models\CatTiendas;
+use app\models\CatTenderos;
+use app\models\CatTiendasRegistradas;
 
 class SiteController extends Controller
 {
@@ -57,7 +59,7 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionTest(){
+    public function actionTest1(){
          //$auth = Yii::$app->authManager;
     
         //  // add "updatePost" permission
@@ -176,5 +178,34 @@ class SiteController extends Controller
         }
 
         return $this->goHome();
+//--------------------------------------------------------------------------------- test
+    public function actionTest()
+    {
+        // $tendero = 1;
+        // $tenderos = CatTenderos::find()->where(['txt_clave_tienda'=>'1t'])->one();
+        // $compra = CatTenderos::getactualizarpuntos();
+        // // print_r($tenderos);
+        // // exit;
+
+
+        $puntos = CatTenderos::find()->where(['txt_clave_tienda'=>'1t'])->one();
+        $puntos->getActualizarPuntos();
+        print_r($puntos);
+         exit;
+
+        //----------- consulta de tienda participante
+        // $tendero = CatTenderos::find()->where(['txt_clave_tienda'=>'6t'])->one();
+        // $tendero->getTiendaParticipante();
+        // print_r($tendero);
+        // exit;
+
+        return $this->render('test',['compra'=>$puntos]);
+    }
+    public function actionConsultaTienda()
+    {
+        $tienda = CatTenderos::find()->where(['txt_clave_tienda'=>$id])->one();
+        $tienda->getTiendaParticipante();
+         print_r($tienda);
+        exit;
     }
 }
