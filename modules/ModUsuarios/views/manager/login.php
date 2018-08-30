@@ -9,60 +9,74 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
 $this->title = 'Login';
-$this->params['classBody'] = "page-login-v3 layout-full login-page";
+$this->params['classBody'] = "page-login-v2 layout-full page-dark login-page";
 
 ?>
 
+<div class="page-brand-info">
+	<!-- <div class="brand">
+		<img class="brand-img" src="<?=Url::base()?>/webAssets/images/logo-pepsi.png" alt="PEPSI">
+		<h2 class="brand-text font-size-40">PEPSI</h2>
+	</div>
+	<p class="font-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+</div>
 
+<div class="page-login-mains animation-slide-left animation-duration-2">
 
-<div class="panel">
-	<div class="panel-body">
-		
-		<h2>
-            <img src="<?=Url::base()?>/webAssets/images/logo-latingal-boutique.png" alt="">
-        </h2>
+	<div class="brand">
+		<img class="brand-img brand-img-xs" src="<?=Url::base()?>/webAssets/images/icono-pepsi.png" alt="PEPSI">
+		<!-- <h3 class="brand-text">PEPSI</h3> -->
+	</div>
 
+	<!--
+	<h3 class="login-title">Iniciar sesión</h3>
+	<p class="login-title-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	-->
 
-		<?php 
+	<?php 
 	$form = ActiveForm::begin([
 		'id' => 'form-ajax',
 		'enableAjaxValidation' => true,
 		'enableClientValidation' => true,
-		'fieldConfig' => [
-			"template" => "{input}{label}{error}",
-			"options" => [
-				"class" => "form-group form-material floating",
-				"data-plugin" => "formMaterial"
-			],
-			"labelOptions" => [
-				"class" => "floating-label"
-			]
-		]
 	]);
 	?>
+		
+		<?= $form->field($model, 'username')->textInput(["class" => "form-control", 'placeholder'=>'Usuario']) ?>
 
-		<?= $form->field($model, 'username')->textInput(["class" => "form-control"]) ?>
+		<?= $form->field($model, 'password')->passwordInput(["class" => "form-control", 'placeholder'=>'Contraseña']) ?>
 
-		<?= $form->field($model, 'password')->passwordInput(["class" => "form-control"]) ?>
+		<!-- <div class="form-group">
+		<label class="sr-only" for="inputEmail">Email</label>
+		<input class="form-control" id="inputEmail" name="email" placeholder="Email" type="email">
+		</div>
+
+		<div class="form-group">
+		<label class="sr-only" for="inputPassword">Password</label>
+		<input class="form-control" id="inputPassword" name="password" placeholder="Password" type="password">
+		</div> -->
 
 		<div class="form-group olvide-contrasena">
 			<a class="login-link" href="<?= Url::base() ?>/peticion-pass">¿Olvidaste tu contraseña?</a>
 		</div>
 
 		<div class="form-group form-group-actions">
-			<?= Html::submitButton('<span class="ladda-label">Ingresar</span>', ["data-style" => "zoom-in", 'class' => 'btn btn-primary btn-block btn-lg mt-20 ladda-button', 'name' => 'login-button']); ?>
+			<?= Html::submitButton('<span class="ladda-label">Ingresar</span>', ["data-style" => "zoom-in", 'class' => 'btn btn-secondary btn-block btn-lg mt-20 ladda-button', 'name' => 'login-button']); ?>
 		</div>
 
 		<div class="form-group necesito-cuenta">
 			<a class="login-link" href="<?= Url::base() ?>/sign-up">Necesito una cuenta</a>
 		</div>
 
-		<?php ActiveForm::end(); ?>
+	<?php ActiveForm::end(); ?>
 
-
+	<footer class="page-copyright">
+		
 		<div class="ayuda-soporte">
 			<span>¿Necesitas ayuda? escribe a:</span>
 			<a class="no-redirect login-link" href="mailto:soporte@2gom.com.mx?Subject=Solicitud%de%Soporte">soporte@2gom.com.mx</a>
 		</div>
-	</div>
+
+	</footer>
+
 </div>
+    
