@@ -33,14 +33,25 @@ $this->params['classBody'] = "site-navbar-small site-top dashboard";
             <h2><?=$this->title?></h2>
             <h4>Algo está aquí</h4>
         </div>
-        <div class="pane-actions">
-            e
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="pane-cont">
+                e
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="pane-cont">
+                cont
+            </div>
         </div>
     </div>
 
-    <div class="pane-cont">
+    <!-- <div class="pane-cont">
         Algo
-    </div>
+    </div> -->
 
 
 </div>

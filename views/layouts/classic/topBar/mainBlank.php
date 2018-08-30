@@ -32,6 +32,26 @@ AppAssetClassicTopBarBlank::register($this);
 
   <?php $this->endBody();?>
 
+  <div class="modal fade modal-aviso" id="examplePositionCenter" aria-labelledby="examplePositionCenter" role="dialog" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-simple modal-center">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title">Modal Title</h4>
+        </div>
+        <div class="modal-body">
+          <p>One fine body…</p>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
   <script>
   (function(document, window, $) {
     'use strict';
