@@ -70,6 +70,8 @@ $this->params['classBody'] = "page-login-v2 layout-full page-dark login-page";
 	<?php ActiveForm::end(); ?>
 
 	<footer class="page-copyright">
+
+		<button class="btn btn-primary" data-target="#examplePositionCenter" data-toggle="modal" type="button">Generate</button>
 		
 		<div class="ayuda-soporte">
 			<span>¿Necesitas ayuda? escribe a:</span>
