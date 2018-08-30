@@ -77,7 +77,7 @@ class CatTiendas extends \yii\db\ActiveRecord implements IdentityInterface
      */
     public function getWrkPuntuajeActuals()
     {
-        return $this->hasMany(WrkPuntuajeActual::className(), ['txt_clave_tienda' => 'txt_clave_tienda']);
+        return $this->hasOne(WrkPuntuajeActual::className(), ['txt_clave_tienda' => 'txt_clave_tienda']);
     }
 
     /**

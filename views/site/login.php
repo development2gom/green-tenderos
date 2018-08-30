@@ -39,9 +39,7 @@ $this->registerJsFile(
 
 	<?php 
 	$form = ActiveForm::begin([
-        'id' => 'form-ajax',
-		'enableAjaxValidation' => true,
-		'enableClientValidation' => true,
+        'id' => 'form-ajax'
 	]);
 	?>
 		
