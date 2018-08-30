@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\components\AccessControlExtend;
+use app\models\CatTiendas;
 
 class SiteController extends Controller
 {
@@ -137,5 +138,43 @@ class SiteController extends Controller
         print_r($fulllist);
         exit;
         return $fulllist;
+    }
+
+    public function actionLogin($uddi = null){
+        // if (!Yii::$app->user->isGuest) {
+
+        //     return $this->goHome();
+        // }
+
+        $this->layout = 'classic/topBar/mainBlank';
+        $model = new CatTiendas();
+
+        if($_POST){
+            //print_r($_POST['CatTiendas']['txt_clave_tienda']);exit;
+            $clave_tienda = $_POST['CatTiendas']['txt_clave_tienda'];
+            $clave_bodega = $_POST['CatTiendas']['txt_clave_bodega'];
+
+            if($tienda = validarExistaTienda($clave_tienda, $clave_bodega)){
+                return $this->redirect(['ingresar', 'token'=>$tienda->txt_clave_tienda]);
+            }
+
+            return $this->goHome();
+        }
+
+        return $this->render('login', [
+            'model' => $model,
+            'uddi' => $uddi ? $uddi : null,
+        ]);
+    }
+
+    public function actionIngresar($token = null){
+       
+        $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$token])->one();
+    
+        if(Yii::$app->getUser()->login($tienda)){
+            echo "Se logueo";exit;
+        }
+
+        return $this->goHome();
     }
 }
