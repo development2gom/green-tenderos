@@ -16,6 +16,10 @@ use app\models\CatTiendasRegistradas;
 use app\models\WrkHistorial;
 use yii\web\UploadedFile;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+use app\models\CatBodegas;
+use app\models\WrkPuntuajeActual;
+use app\models\CatNiveles;
+use app\models\Constantes;
 
 class SiteController extends Controller
 {
@@ -233,24 +237,103 @@ class SiteController extends Controller
             $file = UploadedFile::getInstanceByName('file-import');//print_r($file->tempName);exit;
             
             if($file){
-                try{
-                    $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
 
-                    $spreadsheet = $reader->load($file->tempName);
-                    $sheetData = $spreadsheet->getActiveSheet()->toArray();
-                    //print_r($sheetData);
-                    foreach($sheetData as  $key => $data){
-                        if($key == 0)
-                            continue;
-                            
-                        foreach($data as $d){
-                            echo $d."<br/>";
-                        }
-                    }
+                $spreadsheet = $reader->load($file->tempName);
+                $sheetData = $spreadsheet->getActiveSheet()->toArray();
+                //print_r($sheetData);
+                foreach($sheetData as  $key => $data){
+                    if($key == 0)
+                        continue;
                     
-                }catch(\Exception $e){
-                    echo $e;
-                    exit;
+                    //print_r($data);exit;
+
+                    $transaction = Yii::$app->db->beginTransaction();
+                    try{
+                        $bodega = CatBodegas::find()->where(['id_bodega'=>$data[2]])->one();
+                        if($bodega){
+                            $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$data[0], 'txt_clave_bodega'=>$bodega->txt_clave_bodega])->one();
+                            if(!$tienda){
+                                $tienda = new CatTiendas();
+                                $tienda->txt_clave_tienda = $data[0];
+                                $tienda->txt_clave_bodega = $bodega->txt_clave_bodega;
+                                $tienda->txt_nombre = $data[1];
+
+                                if(!$tienda->save()){
+                                    $transaction->rollBack();
+                                    print_r($tienda);
+                                    exit;
+                                }   
+                            }
+
+                            $historial = new WrkHistorial();
+                            $historial->id_concurso = 1;
+                            $historial->txt_clave_bodega = $bodega->txt_clave_bodega;
+                            $historial->txt_clave_tienda = $tienda->txt_clave_tienda;
+                            $fecha = date("Y-m-d", strtotime($data[7]));
+                            $historial->fch_compra = $fecha;
+                            $historial->num_saldo_anterior = $data[5];
+                            $historial->num_saldo_mes = $data[4];
+                            $historial->num_saldo_acumulado = $data[6];
+
+                            if(!$historial->save()){
+                                $transaction->rollBack();
+                                print_r($historial);
+                                exit;
+                            }
+
+
+                            $idNivel;
+                            $siguienteNivel;
+                            $niveles = CatNiveles::find()->where(['b_habilitado'=>1])->all();
+                            foreach($niveles as $nivel){
+                                if($nivel->num_rango_inicial <= $historial->num_saldo_acumulado && $nivel->num_rango_final >= $historial->num_saldo_acumulado){
+                                    $idNivel = $nivel->id_nivel;
+                                    $siguienteNivel = $historial->num_saldo_acumulado - $nivel->num_rango_final;
+                                    break;
+                                }
+                            }
+
+                            $puntajeActual = WrkPuntuajeActual::find()->where(['txt_clave_tienda'=>$tienda->txt_clave_tienda, 'txt_clave_bodega'=>$bodega->txt_clave_bodega])->one();
+                            if(!$puntajeActual){
+                                $puntajeActual = new WrkPuntuajeActual();
+                                $puntajeActual->txt_clave_bodega = $bodega->txt_clave_bodega;
+                                $puntajeActual->txt_clave_tienda = $tienda->txt_clave_tienda;
+                                $puntajeActual->id_nivel = $idNivel;
+                                $puntajeActual->id_concurso = Constantes::CONCURSO;
+                                $puntajeActual->num_puntuaje_actual = $historial->num_saldo_mes;
+                                $puntajeActual->num_saldo_anterior = $historial->num_saldo_anterior;
+                                $puntajeActual->num_saldo_mes = $historial->num_saldo_mes;
+                                $puntajeActual->num_saldo_acumulado = $historial->num_saldo_acumulado;
+                                $puntajeActual->num_puntos_sig_experiencia = $siguienteNivel;
+                            }else{
+                                $puntajeActual->id_nivel = $idNivel;
+                                $puntajeActual->num_puntuaje_actual = $historial->num_saldo_mes;
+                                $puntajeActual->num_saldo_anterior = $historial->num_saldo_anterior;
+                                $puntajeActual->num_saldo_mes = $historial->num_saldo_mes;
+                                $puntajeActual->num_saldo_acumulado = $historial->num_saldo_acumulado;
+                                $puntajeActual->num_puntos_sig_experiencia = $siguienteNivel;
+                            }
+
+                            if(!$puntajeActual->save()){
+                                $transaction->rollBack();
+                                print_r($puntajeActual);
+                                exit;
+                            }
+
+                        }else{
+                            $transaction->rollBack();
+                            echo "No se encontro la bodega";
+                            exit;
+                        }
+                        // foreach($data as $d){
+                        //     echo $d."<br/>";
+                        // }
+                        $transaction->commit();
+                    }catch (\Exception $e) {
+                        $transaction->rollBack();
+                        throw $e;
+                    }
                 }exit;
             }
         }

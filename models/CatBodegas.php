@@ -7,6 +7,7 @@ use Yii;
 /**
  * This is the model class for table "cat_bodegas".
  *
+ * @property string $id_bodega
  * @property string $txt_clave_bodega
  * @property string $txt_nombre
  * @property string $b_habilitado
@@ -44,6 +45,7 @@ class CatBodegas extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'id_bodega' => 'Id Bodega',
             'txt_clave_bodega' => 'Txt Clave Bodega',
             'txt_nombre' => 'Txt Nombre',
             'b_habilitado' => 'B Habilitado',
