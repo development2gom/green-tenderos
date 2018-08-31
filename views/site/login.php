@@ -57,16 +57,8 @@ $this->registerJsFile(
 		<input class="form-control" id="inputPassword" name="password" placeholder="Password" type="password">
 		</div> -->
 
-		<div class="form-group olvide-contrasena">
-			<a class="login-link" href="<?= Url::base() ?>/peticion-pass">¿Olvidaste tu contraseña?</a>
-		</div>
-
 		<div class="form-group form-group-actions">
 			<?= Html::submitButton('<span class="ladda-label">Ingresar</span>', ["data-style" => "zoom-in", 'class' => 'btn btn-secondary btn-block btn-lg mt-20 ladda-button', 'name' => 'login-button']); ?>
-		</div>
-
-		<div class="form-group necesito-cuenta">
-			<a class="login-link" href="<?= Url::base() ?>/sign-up">Necesito una cuenta</a>
 		</div>
 
 	<?php ActiveForm::end(); ?>
