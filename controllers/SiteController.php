@@ -289,7 +289,7 @@ class SiteController extends Controller
                             foreach($niveles as $nivel){
                                 if($nivel->num_rango_inicial <= $historial->num_saldo_acumulado && $nivel->num_rango_final >= $historial->num_saldo_acumulado){
                                     $idNivel = $nivel->id_nivel;
-                                    $siguienteNivel = $historial->num_saldo_acumulado - $nivel->num_rango_final;
+                                    $siguienteNivel = $nivel->num_rango_final - $historial->num_saldo_acumulado;
                                     break;
                                 }
                             }
