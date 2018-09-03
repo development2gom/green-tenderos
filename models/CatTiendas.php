@@ -49,9 +49,9 @@ class CatTiendas extends \yii\db\ActiveRecord implements IdentityInterface
     public function attributeLabels()
     {
         return [
-            'txt_clave_tienda' => 'Txt Clave Tienda',
-            'txt_clave_bodega' => 'Txt Clave Bodega',
-            'txt_nombre' => 'Txt Nombre',
+            'txt_clave_tienda' => 'Clave Tienda',
+            'txt_clave_bodega' => 'Clave Bodega',
+            'txt_nombre' => 'Nombre',
             'b_habilitado' => 'B Habilitado',
         ];
     }

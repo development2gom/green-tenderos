@@ -45,9 +45,9 @@ class CatBodegas extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_bodega' => 'Id Bodega',
-            'txt_clave_bodega' => 'Txt Clave Bodega',
-            'txt_nombre' => 'Txt Nombre',
+            'id_bodega' => 'Bodega',
+            'txt_clave_bodega' => 'Clave Bodega',
+            'txt_nombre' => 'Nombre',
             'b_habilitado' => 'B Habilitado',
         ];
     }

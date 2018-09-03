@@ -46,8 +46,8 @@ class EntImagenes extends \yii\db\ActiveRecord
         return [
             'id_imagen' => 'Id Imagen',
             'id_concurso' => 'Id Concurso',
-            'txt_nombre' => 'Txt Nombre',
-            'txt_url' => 'Txt Url',
+            'txt_nombre' => 'Nombre',
+            'txt_url' => 'Url',
             'b_habilitado' => 'B Habilitado',
         ];
     }

@@ -47,9 +47,9 @@ class CatConcurso extends \yii\db\ActiveRecord
     {
         return [
             'id_concurso' => 'Id Concurso',
-            'txt_nombre' => 'Txt Nombre',
-            'fch_inicio' => 'Fch Inicio',
-            'fch_fin' => 'Fch Fin',
+            'txt_nombre' => 'Nombre',
+            'fch_inicio' => 'Inicio',
+            'fch_fin' => 'Fecha Fin',
             'b_habilitado' => 'B Habilitado',
         ];
     }
