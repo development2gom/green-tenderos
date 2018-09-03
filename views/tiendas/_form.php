@@ -18,10 +18,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'txt_nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'b_habilitado')->textInput(['maxlength' => true]) ?>
+    
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('GUARDAR', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

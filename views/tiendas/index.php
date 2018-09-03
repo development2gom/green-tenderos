@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Cat Tiendas', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nueva tienda', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'txt_clave_tienda',
             'txt_clave_bodega',
             'txt_nombre',
-            'b_habilitado',
+            // 'b_habilitado',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
