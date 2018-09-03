@@ -231,6 +231,7 @@ class SiteController extends Controller
     }
 
     public function actionImportarData(){
+        Yii::$app->response->format = Response::FORMAT_JSON;
         $errores = [];
         
         if (Yii::$app->request->isPost) {
@@ -261,8 +262,11 @@ class SiteController extends Controller
 
                                 if(!$tienda->save()){
                                     $transaction->rollBack();
-                                    print_r($tienda);
-                                    exit;
+                                    print_r($tienda->errors);
+
+                                    return [
+                                        'status' => 'error'
+                                    ];
                                 }   
                             }
 
@@ -278,8 +282,11 @@ class SiteController extends Controller
 
                             if(!$historial->save()){
                                 $transaction->rollBack();
-                                print_r($historial);
-                                exit;
+                                print_r($historial->errors);
+                                
+                                return [
+                                    'status' => 'error'
+                                ];
                             }
 
 
@@ -317,27 +324,43 @@ class SiteController extends Controller
 
                             if(!$puntajeActual->save()){
                                 $transaction->rollBack();
-                                print_r($puntajeActual);
-                                exit;
+                                print_r($puntajeActual->errors);
+                                
+                                return [
+                                    'status' => 'error'
+                                ];
                             }
 
                         }else{
                             $transaction->rollBack();
                             echo "No se encontro la bodega";
-                            exit;
+                            
+                            return [
+                                'status' => 'error'
+                            ];
                         }
                         // foreach($data as $d){
                         //     echo $d."<br/>";
                         // }
                         $transaction->commit();
+
+                        return [
+                            'status' => 'success'
+                        ];
                     }catch (\Exception $e) {
                         $transaction->rollBack();
                         throw $e;
+
+                        return [
+                            'status' => 'error'
+                        ];
                     }
-                }exit;
+                }
             }
         }
 
-        return $this->render("importar-data", ['errores'=>$errores]);
+        return [
+            'status' => 'error'
+        ];
     }
 }
