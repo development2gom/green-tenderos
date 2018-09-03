@@ -58,11 +58,11 @@ class WrkHistorial extends \yii\db\ActiveRecord
             'id_concurso' => 'Id Concurso',
             'txt_clave_bodega' => 'Txt Clave Bodega',
             'txt_clave_tienda' => 'Txt Clave Tienda',
-            'fch_registro' => 'Fch Registro',
-            'fch_compra' => 'Fch Compra',
-            'num_saldo_anterior' => 'Num Saldo Anterior',
-            'num_saldo_mes' => 'Num Saldo Mes',
-            'num_saldo_acumulado' => 'Num Saldo Acumulado',
+            'fch_registro' => 'Fechoa Registro',
+            'fch_compra' => 'Fecha Compra',
+            'num_saldo_anterior' => 'Saldo Anterior',
+            'num_saldo_mes' => 'Saldo Mes',
+            'num_saldo_acumulado' => 'Saldo Acumulado',
             'b_habilitado' => 'B Habilitado',
         ];
     }

@@ -45,10 +45,10 @@ class CatNiveles extends \yii\db\ActiveRecord
     {
         return [
             'id_nivel' => 'Id Nivel',
-            'txt_nombre' => 'Txt Nombre',
-            'num_rango_inicial' => 'Num Rango Inicial',
-            'num_rango_final' => 'Num Rango Final',
-            'num_orden' => 'Num Orden',
+            'txt_nombre' => 'Nombre',
+            'num_rango_inicial' => 'Rango Inicial',
+            'num_rango_final' => 'Rango Final',
+            'num_orden' => 'Orden',
             'b_habilitado' => 'B Habilitado',
         ];
     }
