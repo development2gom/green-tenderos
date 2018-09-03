@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\CatTiendas */
 
-$this->title = 'Create Cat Tiendas';
+$this->title = 'Tienda';
 $this->params['breadcrumbs'][] = ['label' => 'Cat Tiendas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
