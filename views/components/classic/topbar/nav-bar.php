@@ -47,7 +47,7 @@ role="navigation">
           <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
           data-animation="scale-up" role="button">
             <span class="mr-10">
-              <?=$usuario->nombreCorto?>
+              <?=$usuario->txt_nombre?>
             </span>
             <span class="avatar avatar-online">
               <img src="<?=Url::base()?>/webAssets/templates/classic/global/portraits/avatar.png" alt="...">
