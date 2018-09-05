@@ -20,6 +20,8 @@ use app\models\CatBodegas;
 use app\models\WrkPuntuajeActual;
 use app\models\CatNiveles;
 use app\models\Constantes;
+use app\models\EntImagenes;
+use app\models\EntVideos;
 
 class SiteController extends Controller
 {
@@ -225,10 +227,15 @@ class SiteController extends Controller
         
         $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$tienda->txt_clave_tienda])->one();
         $puntuajeActual = $tienda->wrkPuntuajeActuals;
+
+        $imagenes = EntImagenes::find()->where(['b_publicado'=>1])->all();
+        $videos = EntVideos::find()->where(['b_publicado'=>1])->all();
         
         return $this->render('puntuacion', [
             'puntuajeActual' => $puntuajeActual,
-            'tienda' => $tienda
+            'tienda' => $tienda,
+            'imagenes' => $imagenes,
+            'videos' => $videos
         ]);
     }
 }
