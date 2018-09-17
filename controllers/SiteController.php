@@ -20,6 +20,8 @@ use app\models\CatBodegas;
 use app\models\WrkPuntuajeActual;
 use app\models\CatNiveles;
 use app\models\Constantes;
+use app\models\EntImagenes;
+use app\models\EntVideos;
 
 class SiteController extends Controller
 {
@@ -28,29 +30,29 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-    // public function behaviors()
-    // {
-        // return [
-        //     'access' => [
-        //         'class' => AccessControlExtend::className(),
-        //         'only' => ['logout', 'about'],
-        //         'rules' => [
-        //             [
-        //                 'actions' => ['logout'],
-        //                 'allow' => true,
-        //                 'roles' => ['admin'],
-        //             ],
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControlExtend::className(),
+                'only' => ['logout', 'about', 'index', 'puntuacion'],
+                'rules' => [
+                    [
+                        'actions' => ['logout', 'index', 'puntuacion'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                    
-        //         ],
-        //     ],
+                ],
+            ],
             // 'verbs' => [
             //     'class' => VerbFilter::className(),
             //     'actions' => [
             //         'logout' => ['post'],
             //     ],
             // ],
-        //];
-    //}
+        ];
+    }
 
     /**
      * @inheritdoc
@@ -181,10 +183,10 @@ class SiteController extends Controller
        
         $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$token])->one();
     
-        if(Yii::$app->getUser()->login($tienda)){
+        if(Yii::$app->user->login($tienda)){
 
-            return $this->redirect(['puntuacion', 'token'=>$tienda->txt_clave_tienda]);
-        }
+            return $this->redirect(['puntuacion']);
+        }exit;
 
         return $this->goHome();
     }
@@ -220,13 +222,20 @@ class SiteController extends Controller
         exit;
     }
 
-    public function actionPuntuacion($token = null){
-        $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$token])->one();
+    public function actionPuntuacion(){
+        $tienda = Yii::$app->user->identity;
+        
+        $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$tienda->txt_clave_tienda])->one();
         $puntuajeActual = $tienda->wrkPuntuajeActuals;
+
+        $imagenes = EntImagenes::find()->where(['b_publicado'=>1])->all();
+        $videos = EntVideos::find()->where(['b_publicado'=>1])->all();
         
         return $this->render('puntuacion', [
             'puntuajeActual' => $puntuajeActual,
-            'tienda' => $tienda
+            'tienda' => $tienda,
+            'imagenes' => $imagenes,
+            'videos' => $videos
         ]);
     }
 }
