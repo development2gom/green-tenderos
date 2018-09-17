@@ -12,46 +12,44 @@ $this->params['classBody'] = "site-navbar-small site-top dashboard";
     <div class="pane-head">
         <div class="pane-title">
             <h2><?=$this->title?></h2>
-            <h4>Algo está aquí</h4>
-        </div>
-        <div class="pane-actions">
-            e
-        </div>
-    </div>
-
-    <div class="pane-cont">
-        Algo
-    </div>
-
-
-</div>
-
-<div class="paner">
-
-    <div class="pane-head">
-        <div class="pane-title">
-            <h2><?=$this->title?></h2>
-            <h4>Algo está aquí</h4>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="pane-cont">
-                e
+            <div class="row">
+                <div id="col-12">
+                 <a href="<?=Url::base()?>/site/aviso-privacidad" class="btn btn-primary btn-lg active" role="button">Aviso de Privacidad</a>
+                </div>
+            </div>
+            <div class="row">
+                <div id="col-12">
+                
+                <a href="<?=Url::base()?>/site/terminos-condiciones" class="btn btn-primary btn-lg active" role="button">Terminos y Condiciones</a>
+               
+                </div>
+                </div>
+            <div class="row">
+                <div id="col-12">
+                
+                <a href="<?=Url::base()?>/site/ganadores" class="btn btn-primary btn-lg active" role="button">Ganadores</a>
+               
+                </div>
+                </div>
+            <div class="row">
+                <div id="col-12">
+               
+                <a href="<?=Url::base()?>/site/testimonios" class="btn btn-primary btn-lg active" role="button">Testimonios</a>
+                
+                </div>
+                </div>
+            <div class="row">
+                <div id="col-12">
+                
+                <a href="<?=Url::base()?>/site/premios" class="btn btn-primary btn-lg active" role="button">Premios</a>
+                
+                </div>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="pane-cont">
-                cont
-            </div>
-        </div>
+        
     </div>
 
-    <!-- <div class="pane-cont">
-        Algo
-    </div> -->
+   
 
 
 </div>

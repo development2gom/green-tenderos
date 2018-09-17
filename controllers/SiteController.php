@@ -238,4 +238,32 @@ class SiteController extends Controller
             'videos' => $videos
         ]);
     }
+    public function actionInicio()
+    {
+        return $this->render('index');
+    }
+    public function actionAvisoPrivacidad()
+    {
+        return $this->render("aviso-privacidad");
+    }
+    public function actionTerminosCondiciones()
+    {
+        return $this->render("terminos-condiciones");
+    }
+    public function actionDatosTienda()
+    {
+        return $this->render("datos-tienda");
+    }
+    public function actionGanadores()
+    {
+        return $this->render("ganadores");
+    }
+    public function actionTestimonios()
+    {
+        return $this->render("testimonios");
+    }
+    public function actionPremios()
+    {
+        return $this->render("premios");
+    }
 }
