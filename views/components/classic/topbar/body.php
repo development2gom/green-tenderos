@@ -1,7 +1,11 @@
 <!-- Page -->
-<div class="page">
-    <div class="page-content">
+<!-- <div class="page">
+    <div class="page-content"> -->
+
       <?=$content?>
-    </div>
-  </div>
+
+    <!-- </div>
+  </div> -->
   <!-- End Page -->
+
+  <?=$this->render("//components/classic/topbar/footer")?>

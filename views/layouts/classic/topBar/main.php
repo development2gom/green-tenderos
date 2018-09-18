@@ -19,12 +19,12 @@ AppAsset::register($this);
     <![endif]-->
   <?php $this->beginBody();?>
   
-  <?=$this->render("//components/classic/topbar/nav-bar")?>
+  <?=$this->render("//components/classic/topbar/header")?>
 
   <?=$this->render("//components/classic/topbar/body", ["content"=>$content])?>
   
 
-  <?=$this->render("//components/classic/topbar/footer")?>
+  
 
   <?php $this->endBody();?>
  

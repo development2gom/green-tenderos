@@ -15,3 +15,180 @@
 			color: $white
 		h4.modal-title
 			color: $white
+
+header.header
+	align-items: center
+	// background-color: rgba(black,.45)
+	display: flex
+	height: 60px
+	justify-content: center
+	position: fixed
+	right: 0
+	top: 0
+	width: 60px
+	z-index: 9
+	a.header-link
+		align-items: center
+		background-color: $white
+		border-radius: 50%
+		display: flex
+		justify-content: center
+		height: 48px
+		width: 48px
+		i.icon
+			color: $secondary
+			@extend .fs-38
+			transform: scaleX(-1)
+
+footer.footer
+	// background-color: rgba($secondary,.3)
+	bottom: 0
+	left: 0
+	padding-left: 32px
+	position: fixed
+	right: 0
+	img.img-gepp
+		margin-bottom: 32px
+		width: 100px
+
+.dashboard
+	background-image: url('../images/bkgd.jpg')
+	background-position: 50%
+	background-repeat: no-repeat
+	background-size: cover
+	display: block
+	position: relative
+	width: 100%
+	z-index: 2
+	.contend
+		min-height: 100vh
+		width: 100%
+	.dash-contend
+		align-items: flex-start
+		// background-color: rgba(red,.3)
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		.dash-col
+			// background-color: rgba(yellow,.2)
+			display: flex
+			min-height: 99vh
+			&.dash-menu
+				flex-direction: column
+				justify-content: flex-end
+				padding: 32px 32px 16vh
+				width: 35%
+				a
+					border-radius: 30px
+					box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+					display: flex
+					justify-content: center
+					margin-bottom: 12px
+					padding: .675rem .75rem
+					text-transform: uppercase
+					width: 100%
+			&.dash-sorteos
+				align-items: center
+				flex-direction: column
+				padding-bottom: 60px
+				padding-top: 60px
+				width: 40%
+				img
+					max-width: 90%
+					width: 530px
+				ol
+					text-align: center
+					li
+						color: $white
+						&.one
+							@extend .fs-36
+							@extend .fw-regular
+						&.two
+							@extend .fs-40
+							@extend .fw-bold
+			
+			&.dash-actions
+				align-items: flex-end
+				padding-bottom: 80px
+				width: 25%
+				.dash-actions-image
+					align-items: center
+					background-image: url('../images/login-btn-bkgd.png')
+					background-position: center right
+					background-repeat: no-repeat
+					background-size: 220px
+					display: flex
+					height: 132px
+					justify-content: flex-end
+					padding-right: 16px
+					width: 100%
+					.btn.btn-primary
+						border-radius: 30px
+						@extend .fs-16
+						@extend .fw-regular
+						margin-bottom: 16px
+						padding: .385rem .95rem
+						text-transform: uppercase
+
+
+
+.aviso-privacidad
+	background-image: url('../images/bkkd-textos.jpg')
+	background-position: 50%
+	background-repeat: no-repeat
+	background-size: cover
+	display: block
+	position: relative
+	width: 100%
+	z-index: 2
+	.contend
+		min-height: 100vh
+		width: 100%
+	.ap-contend
+		align-items: flex-start
+		// background-color: rgba(red,.3)
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		.ap-title
+			align-items: center
+			display: flex
+			justify-content: flex-start
+			margin-top: 80px
+			padding: 0 32px
+			width: 100%
+			img
+				height: 120px
+				margin-right: 2vw
+			h2
+				color: $white
+				@extend .fw-bold
+				line-height: 1
+				text-transform: uppercase
+				
+				.ap-title-privacidad
+					display: block
+
+				.ap-title-aviso
+					font-size: 4.3rem
+				.ap-title-de
+					@extend .fs-30
+				.ap-title-privacidad
+					font-size: 3rem
+
+		.ap-textos
+			display: flex
+			flex-direction: column
+			height: 40vh
+			margin: 3vh auto 0
+			max-width: 80%
+			overflow-y: auto
+			width: 630px
+			p
+				color: rgba($white,.75)
+				@extend.fs-16
+				font-style: italic
+				letter-spacing: 1px
+				line-height: 1.6
+				margin-bottom: 32px
+				text-align: justify
