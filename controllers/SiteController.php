@@ -158,7 +158,7 @@ class SiteController extends Controller
         //     return $this->goHome();
         // }
 
-        $this->layout = 'classic/topBar/mainBlank';
+        // $this->layout = 'classic/topBar/mainBlank';
         $model = new CatTiendas();
 
         if($_POST){
@@ -224,8 +224,7 @@ class SiteController extends Controller
 
     public function actionPuntuacion(){
         $tienda = Yii::$app->user->identity;
-        
-        $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$tienda->txt_clave_tienda])->one();
+
         $puntuajeActual = $tienda->wrkPuntuajeActuals;
 
         $imagenes = EntImagenes::find()->where(['b_publicado'=>1])->all();
@@ -265,5 +264,9 @@ class SiteController extends Controller
     public function actionPremios()
     {
         return $this->render("premios");
+    }
+    public function actionTabla()
+    {
+        return $this->render("tabla");
     }
 }

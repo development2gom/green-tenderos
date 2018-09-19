@@ -2,43 +2,48 @@
 
 use yii\helpers\Url;
 use app\models\Constantes;
+
+
+$this->title = "Puntuación";
+
+$this->params['classBody'] = "puntuaciones";
 ?>
 
-<div class="row">
-    <div class="col-4 col-sm-12 col-md-4 col-lg-4">
+
+<div class="contend puntuaciones-contend">
+
+    <div class="puntuaciones-title">
+        <img src="<?=Url::base()?>/webAssets/images/logo-cdg.png" alt="">
+        <h2>
+            <span>círculo</span>
+            <span>de</span>
+            <span>puntuaciones</span>
+        </h2>
+    </div>
     
-    </div>
-    <div class="col-8 col-sm-12 col-md-8 col-lg-8">
-        <h5><?= $tienda->txt_nombre ?></h5>
-        <p>Actual: <?= $puntuajeActual->num_puntuaje_actual ?></p>
-        <p>Antes: <?= $puntuajeActual->num_saldo_anterior ?></p>
-        <p>Mes: <?= $puntuajeActual->num_saldo_mes ?></p>
-        <p>Total: <?= $puntuajeActual->num_saldo_acumulado ?></p>
-        <p>Nivel: <?= $puntuajeActual->nivel->txt_nombre ?></p>
-        <p>Siguiente nivel: <?= $puntuajeActual->num_puntos_sig_experiencia ?></p>
+    <div class="puntuaciones-textos">
+        <h3>Nombre del usuario</h3>
+        <div class="puntuaciones-textos-table">
+
+            <div class="puntuaciones-textos-table-td">
+                <h4>Puntos del mes anterior</h4>
+                <p><?= $puntuajeActual->num_saldo_anterior ?></p>
+            </div>
+            <div class="puntuaciones-textos-table-td">
+                <h4>Puntos del mes actual</h4>
+                <p><?= $puntuajeActual->num_saldo_mes ?></p>
+            </div>
+            <div class="puntuaciones-textos-table-td">
+                <h4>Acumulado total</h4>
+                <p><?= $puntuajeActual->num_puntuaje_actual ?></p>
+            </div>
+            <div class="puntuaciones-textos-table-td">
+                <h4>Objetivo</h4>
+                <p><?= $puntuajeActual->num_puntos_sig_experiencia ?></p>
+            </div>
+           
+        </div>
     </div>
 
-    <div class="col-8 col-sm-12 col-md-12 col-lg-12">
-        <?php
-        foreach($imagenes as $imagen){
-            echo $imagen->txt_url;
-        ?>
-            <img src="<?= Constantes::URL_ADMIN . "/imagenes-ganadores/" . $imagen->txt_url?>" alt="">
-        <?php
-        }
-
-        foreach($videos as $video){
-            echo $video->txt_url;
-        ?>
-            <img src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" alt="">
-            <video width="320" height="240" controls>
-                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/mp4">
-                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-        <?php
-        }
-        ?>
-    </div>
 </div>
 
