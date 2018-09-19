@@ -2,7 +2,7 @@
 use yii\helpers\Url;
 /* @var $this yii\web\View */
 
-$this->title = "Dashboard";
+$this->title = "Inicio";
 
 $this->params['classBody'] = "dashboard";
 // site-navbar-small site-top

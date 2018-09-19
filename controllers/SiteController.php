@@ -262,6 +262,19 @@ class SiteController extends Controller
     }
     public function actionTestimonios()
     {
+        $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>'ytrewq'])->one();
+        
+        $puntuajeActual = $tienda->wrkPuntuajeActuals;
+
+        $imagenes = EntImagenes::find()->where(['b_publicado'=>1])->all();
+        $videos = EntVideos::find()->where(['b_publicado'=>1])->all();
+        
+        return $this->render('testimonios', [
+            'puntuajeActual' => $puntuajeActual,
+            'tienda' => $tienda,
+            'imagenes' => $imagenes,
+            'videos' => $videos
+        ]);
         return $this->render("testimonios");
     }
     public function actionPremios()
