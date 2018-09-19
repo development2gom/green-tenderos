@@ -451,9 +451,9 @@ footer.footer
 			flex-direction: column
 			// height: 40vh
 			margin: 0 auto
-			max-width: 80%
+			max-width: 90%
 			padding: 4px 16px
-			width: 830px
+			width: 1024px
 			h3
 				color: $white
 				font-size: 3.4rem
@@ -464,26 +464,41 @@ footer.footer
 				text-transform: uppercase
 
 			.puntuaciones-textos-table
-				background-color: $primary
-				border: 5px dashed red
-				border-radius: 8px
-				box-shadow: inset 0px 0px 10px 1px rgba($black, 0.75)
+				align-items: flex-start
+				background-color: $white
+				border-radius: 4px
+				box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 				display: flex
-				justify-content: space-between
+				flex-wrap: wrap
 				padding: 32px
 				.puntuaciones-textos-table-td
+					border-right: 1px solid $black
 					display: flex
 					flex-direction: column
-					width: 50%
+					padding: 0 24px
+					width: 25%
+					&:last-child
+						border-right: none
+					h4
+						color: $black
+						display: block
+						@extend .fs-16
+						@extend .fw-bold
+						text-transform: uppercase
+						width: 100%
 					p
-						color: $white
+						align-items: center
+						color: $black
+						display: flex
 						@extend .fs-26
 						@extend .fw-bold
 						font-style: italic
 						letter-spacing: 1px
-						line-height: 1.6
+						// line-height: 1.6
+						justify-content: center
 						margin-bottom: 12px
-						text-align: left
+						min-height: 100px
+						text-align: center
 
 
 .testimonios
