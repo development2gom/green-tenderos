@@ -76,7 +76,7 @@ $this->registerJsFile(
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-primary">Acepto el Aviso de Privacidad</button>
+				<button type="button" class="btn btn-primary" id="btn-acepto-terminos">Acepto el Aviso de Privacidad</button>
 			</div>
 		</div>
 	</div>
