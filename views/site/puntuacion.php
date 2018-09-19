@@ -22,7 +22,7 @@ $this->params['classBody'] = "puntuaciones";
     </div>
     
     <div class="puntuaciones-textos">
-        <h3>Nombre del usuario</h3>
+        <h3><?=Yii::$app->user->identity->txt_nombre;?></h3>
         <div class="puntuaciones-textos-table">
 
             <div class="puntuaciones-textos-table-td">
