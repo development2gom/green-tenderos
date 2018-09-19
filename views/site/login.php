@@ -58,6 +58,10 @@ $this->registerJsFile(
 
 	</div>
 
+	<div class="login-instrucciones">
+		<img class="login-instrucciones-img" src="<?=Url::base()?>/webAssets/images/instrucciones.png" alt="">
+	</div>
+
 </div>
 
 
