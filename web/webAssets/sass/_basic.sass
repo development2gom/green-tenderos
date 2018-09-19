@@ -411,14 +411,18 @@ h1, h2, h3, h4, h5, h6
 /*  Modal
 	============================== */
 .modal-backdrop
-	background-color: rgba($secondary,.9)
+	background-color: rgba($secondary,.95)
 	position: absolute
 	z-index: 9906
 
 .modal
+	top: 5vh
+	bottom: 5vh
+	height: 90vh
 	position: fixed
 	z-index: 9999
 	.modal-dialog
+		height: auto
 		.modal-header
 			button.close
 				position: absolute
@@ -428,11 +432,28 @@ h1, h2, h3, h4, h5, h6
 .modal-aviso
 	.modal-header
 		background-color: #f2a654
-		border-radius: .286rem .286rem 0 0
+		border-radius: 3px 3px 0 0
 		.close
 			color: $white
 		h4.modal-title
 			color: $white
+
+
+.modal-aviso
+	.modal-dialog
+		.modal-content
+			.modal-header
+				background-color: $secondary
+			
+			.modal-body
+				padding: 24px
+				p
+					@extend .fs-18
+					line-height: 1.6
+					margin-bottom: 32px
+					text-align: justify
+
+			// .modal-footer
 
 /*  Summary
 	============================== */
