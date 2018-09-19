@@ -268,4 +268,8 @@ class SiteController extends Controller
     {
         return $this->render("premios");
     }
+    public function actionTabla()
+    {
+        return $this->render("tabla");
+    }
 }

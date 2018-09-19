@@ -408,6 +408,84 @@ footer.footer
 						text-align: left
 
 
+.puntuaciones
+	background-image: url('../images/bkgd-ganadores.jpg')
+	background-position: 50%
+	background-repeat: no-repeat
+	background-size: cover
+	display: block
+	position: relative
+	width: 100%
+	z-index: 2
+	.contend
+		min-height: 100vh
+		width: 100%
+	.puntuaciones-contend
+		align-items: flex-start
+		// background-color: rgba(red,.3)
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		.puntuaciones-title
+			align-items: center
+			display: flex
+			justify-content: flex-start
+			margin-top: 80px
+			padding: 0 32px
+			width: 100%
+			img
+				height: 120px
+				margin-right: 2vw
+			h2
+				color: $white
+				@extend .fs-22
+				@extend .fw-bold
+				line-height: 1
+				text-transform: uppercase
+				span
+					display: block
+
+		.puntuaciones-textos
+			// background-color: rgba(red,.2)
+			display: flex
+			flex-direction: column
+			// height: 40vh
+			margin: 0 auto
+			max-width: 80%
+			padding: 4px 16px
+			width: 830px
+			h3
+				color: $white
+				font-size: 3.4rem
+				@extend .fw-bold
+				line-height: 1
+				margin-bottom: 32px
+				text-align: center
+				text-transform: uppercase
+
+			.puntuaciones-textos-table
+				background-color: $primary
+				border: 5px dashed red
+				border-radius: 8px
+				box-shadow: inset 0px 0px 10px 1px rgba($black, 0.75)
+				display: flex
+				justify-content: space-between
+				padding: 32px
+				.puntuaciones-textos-table-td
+					display: flex
+					flex-direction: column
+					width: 50%
+					p
+						color: $white
+						@extend .fs-26
+						@extend .fw-bold
+						font-style: italic
+						letter-spacing: 1px
+						line-height: 1.6
+						margin-bottom: 12px
+						text-align: left
+
+
 .testimonios
 	background-image: url('../images/bkgd.jpg')
 	background-position: 50%
@@ -551,8 +629,9 @@ footer.footer
 					&.has-error
 						.help-block
 							color: $error
-							@extend .fs-14
-							margin-top: 4px
+							@extend .fs-15
+							margin-top: 6px
+							padding-left: 16px
 							text-align: left
 				
 					&.form-group-actions
