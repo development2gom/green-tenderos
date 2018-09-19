@@ -2,7 +2,7 @@
 use yii\helpers\Url;
 /* @var $this yii\web\View */
 
-$this->title = "Dashboard";
+$this->title = "Aviso de Privacidad";
 
 $this->params['classBody'] = "aviso-privacidad";
 // site-navbar-small site-top

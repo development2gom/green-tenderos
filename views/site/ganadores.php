@@ -24,18 +24,18 @@ $this->params['classBody'] = "ganadores";
         <div class="ganadores-textos-table">
 
             <div class="ganadores-textos-table-td">
-                <p>. Rubén Vázquez Galván</p>
+                <!-- <p>. Rubén Vázquez Galván</p>
                 <p>. Marina Aguilar Trejo</p>
                 <p>. Eduardo Méndez González</p>
                 <p>. Roxana Reyes Herrera</p>
-                <p>. Jimena Hernández</p>
+                <p>. Jimena Hernández</p> -->
             </div>
             <div class="ganadores-textos-table-td">
-                <p>. Ernesto García Cuevas</p>
+                <!-- <p>. Ernesto García Cuevas</p>
                 <p>. Lucía Fernanda Pérez</p>
                 <p>. Mario Santos López</p>
                 <p>. Gabriel Medina Díaz</p>
-                <p>. Máximo Santana López</p>
+                <p>. Máximo Santana López</p> -->
             </div>
                 
         </div>

@@ -185,7 +185,7 @@ class SiteController extends Controller
     
         if(Yii::$app->user->login($tienda)){
 
-            return $this->redirect(['puntuacion']);
+            return $this->redirect(['index']);
         }exit;
 
         return $this->goHome();
@@ -259,6 +259,15 @@ class SiteController extends Controller
     }
     public function actionTestimonios()
     {
+      
+        $imagenes = EntImagenes::find()->where(['b_publicado'=>1])->all();
+        $videos = EntVideos::find()->where(['b_publicado'=>1])->all();
+        
+        return $this->render('testimonios', [
+            
+            'imagenes' => $imagenes,
+            'videos' => $videos
+        ]);
         return $this->render("testimonios");
     }
     public function actionPremios()

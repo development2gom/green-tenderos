@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use app\models\Constantes;
 /* @var $this yii\web\View */
 
 $this->title = "Testimonios";
@@ -20,39 +21,40 @@ $this->params['classBody'] = "testimonios";
     <div class="testimonios-textos">
         
         <div class="testimonios-imagenes-col">
-
+        <?php
+        foreach($imagenes as $imagen){
+            
+        ?>
+              
             <div class="testimonios-imagenes-col-a">
-                <img src="https://via.placeholder.com/150x100" alt="">
+            <img src="<?= Constantes::URL_ADMIN . "/imagenes-ganadores/" . $imagen->txt_url?>" alt="">
             </div>
-            <div class="testimonios-imagenes-col-a">
-                <img src="https://via.placeholder.com/150x100" alt="">
-            </div>
-            <div class="testimonios-imagenes-col-a">
-                <img src="https://via.placeholder.com/150x100" alt="">
-            </div>
-            <div class="testimonios-imagenes-col-a">
-                <img src="https://via.placeholder.com/150x100" alt="">
-            </div>
-            <div class="testimonios-imagenes-col-a">
-                <img src="https://via.placeholder.com/150x100" alt="">
-            </div>
-            <div class="testimonios-imagenes-col-a">
-                <img src="https://via.placeholder.com/150x100" alt="">
-            </div>
-
+           
+        <?php
+           }
+        ?>
         </div>
         <div class="testimonios-videos-col">
-
+        <?php
+        foreach($videos as $video){
+            
+        ?>
+            <div class="row"> 
+               <div class="col-12">
             <div class="testimonios-imagenes-col-b">
-                <img src="https://via.placeholder.com/300x150" alt="">
+            <video width="320" height="240" controls>
+                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/mp4">
+                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
             </div>
-            <div class="testimonios-imagenes-col-b">
-                <img src="https://via.placeholder.com/300x150" alt="">
             </div>
-            <div class="testimonios-imagenes-col-b">
-                <img src="https://via.placeholder.com/300x150" alt="">
             </div>
-
+           
+        
+            <?php
+        }
+        ?>
         </div>
 
     </div>
