@@ -23,15 +23,13 @@ $this->params['classBody'] = "testimonios";
         <div class="testimonios-imagenes-col">
         <?php
         foreach($imagenes as $imagen){
-            echo $imagen->txt_url;
+            
         ?>
-               <div class="row"> 
-               <div class="col-12">
+              
             <div class="testimonios-imagenes-col-a">
             <img src="<?= Constantes::URL_ADMIN . "/imagenes-ganadores/" . $imagen->txt_url?>" alt="">
             </div>
-            </div>
-            </div> 
+           
         <?php
            }
         ?>
@@ -39,7 +37,7 @@ $this->params['classBody'] = "testimonios";
         <div class="testimonios-videos-col">
         <?php
         foreach($videos as $video){
-            echo $video->txt_url;
+            
         ?>
             <div class="row"> 
                <div class="col-12">
