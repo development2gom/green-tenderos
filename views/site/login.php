@@ -9,7 +9,8 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
 $this->title = 'Login';
-$this->params['classBody'] = "page-login-v2 layout-full page-dark login-page";
+$this->params['classBody'] = "login-page";
+// page-login-v2 layout-full page-dark 
 
 $this->registerJsFile(
     '@web/webAssets/js/site/index.js',
@@ -17,57 +18,66 @@ $this->registerJsFile(
 );
 ?>
 
-<div class="page-brand-info">
-	<!-- <div class="brand">
-		<img class="brand-img" src="<?=Url::base()?>/webAssets/images/logo-pepsi.png" alt="PEPSI">
-		<h2 class="brand-text font-size-40">PEPSI</h2>
-	</div>
-	<p class="font-size-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
-</div>
+<div class="contend login-contend">
 
-<div class="page-login-mains animation-slide-left animation-duration-2">
-
-	<div class="brand">
-		<img class="brand-img brand-img-xs" src="<?=Url::base()?>/webAssets/images/icono-pepsi.png" alt="PEPSI">
-		<!-- <h3 class="brand-text">PEPSI</h3> -->
+	<div class="login-title animation-slide-top animation-duration-1">
+		<img src="<?=Url::base()?>/webAssets/images/logo-sorteo.png" alt="">
 	</div>
 
-	<!--
-	<h3 class="login-title">Iniciar sesión</h3>
-	<p class="login-title-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-	-->
+	<div class="login-form animation-slide-top animation-duration-2">
 
-	<?php 
-	$form = ActiveForm::begin([
-        'id' => 'form-ajax'
-	]);
-	?>
+		<h3>Ingresa</h3>
 		
-		<?= $form->field($model, 'txt_clave_tienda')->textInput(["class" => "form-control", 'placeholder'=>'Clave tienda']) ?>
+		<?php 
+		$form = ActiveForm::begin([
+			'id' => 'form-ajax'
+		]);
+		?>
+			
+			<?= $form->field($model, 'txt_clave_tienda')->textInput(["class" => "form-control", 'placeholder'=>'Clave tienda'])->label(false) ?>
 
-		<?= $form->field($model, 'txt_clave_bodega')->textInput(["class" => "form-control", 'placeholder'=>'Clave bodega']) ?>
+			<?= $form->field($model, 'txt_clave_bodega')->textInput(["class" => "form-control", 'placeholder'=>'Clave bodega'])->label(false) ?>
 
-		<!-- <div class="form-group">
-		<label class="sr-only" for="inputEmail">Email</label>
-		<input class="form-control" id="inputEmail" name="email" placeholder="Email" type="email">
-		</div>
+			<div class="form-group form-group-check">
+				<ul class="unstyled centered">
+					<li>
+						<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+						<label for="styled-checkbox-1">
+							<span>He leído y acepto el aviso de privacidad</span>
+						</label>
+						<div class="styled-mask js-mask-check"></div>
+					</li>
+				</ul>
+			</div>
 
-		<div class="form-group">
-		<label class="sr-only" for="inputPassword">Password</label>
-		<input class="form-control" id="inputPassword" name="password" placeholder="Password" type="password">
-		</div> -->
+			<div class="form-group form-group-actions">
+				<?= Html::submitButton('<span class="ladda-label">Ingresar</span>', ["data-style" => "zoom-in", 'class' => 'btn btn-primary ladda-button', 'name' => 'login-button']); ?>
+			</div>
 
-		<div class="form-group form-group-actions">
-			<?= Html::submitButton('<span class="ladda-label">Ingresar</span>', ["data-style" => "zoom-in", 'class' => 'btn btn-secondary btn-block btn-lg mt-20 ladda-button', 'name' => 'login-button']); ?>
-		</div>
+		<?php ActiveForm::end(); ?>
 
-	<?php ActiveForm::end(); ?>
+	</div>
 
-	<footer class="page-copyright">		
-		<div class="ayuda-soporte">
-			<span>¿Necesitas ayuda? escribe a:</span>
-			<a class="no-redirect login-link" href="mailto:soporte@2gom.com.mx?Subject=Solicitud%de%Soporte">soporte@2gom.com.mx</a>
-		</div>
-	</footer>
 </div>
-    
+
+
+<div class="modal modal-aviso fade" id="modal-aviso" aria-labelledby="modal-aviso" role="dialog" tabindex="-1" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog modal-simple modal-center">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">×</span>
+				</button>
+				<h4 class="modal-title">Aviso de Privacidad</h4>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, nibh eget fringilla porttitor, dolor nulla mollis augue, id bibendum odio ante eu lacus. Sed ut neque commodo, finibus nulla et, commodo nibh. Aliquam ut leo interdum, vulputate tortor in, ullamcorper tortor. Praesent eleifend porta dapibus. Donec rutrum, lorem non commodo tincidunt, neque nibh congue lacus, eu malesuada magna ante in lorem. Maecenas commodo nisl eget dolor iaculis, ac facilisis tortor rutrum. Nam ut lobortis nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam a quam interdum, feugiat orci vel, finibus lorem. Etiam suscipit orci nec arcu viverra tempus. Etiam in laoreet est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque placerat, nulla vel molestie ullamcorper, est mauris rutrum purus, vitae laoreet nisl metus sit amet risus. </p>
+				<p>Nullam a arcu faucibus, molestie arcu eu, venenatis quam. Donec et urna sed urna blandit vulputate. Etiam euismod aliquet felis, sed sodales ipsum scelerisque non. Quisque aliquet pellentesque est at euismod. Morbi massa lorem, pretium nec molestie pharetra, interdum quis purus. Quisque rhoncus risus quis mauris consequat, et cursus dui feugiat. Proin blandit ultricies mi, quis tristique tellus. Duis vulputate imperdiet diam, nec facilisis est vestibulum vitae. Curabitur quam odio, ultrices vel est volutpat, molestie congue neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut arcu nunc, posuere sit amet auctor in, accumsan nec turpis. Nunc eget rhoncus sapien. Praesent ut eros non leo pharetra euismod. Donec et risus vestibulum, eleifend risus vel, finibus purus. Curabitur vel tellus est. </p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary">Acepto el Aviso de Privacidad</button>
+			</div>
+		</div>
+	</div>
+</div>

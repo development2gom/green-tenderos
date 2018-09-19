@@ -158,7 +158,7 @@ class SiteController extends Controller
         //     return $this->goHome();
         // }
 
-        $this->layout = 'classic/topBar/mainBlank';
+        // $this->layout = 'classic/topBar/mainBlank';
         $model = new CatTiendas();
 
         if($_POST){
