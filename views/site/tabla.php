@@ -28,15 +28,15 @@ $this->params['classBody'] = "puntuaciones";
                 <p>1244</p>
             </div>
             <div class="puntuaciones-textos-table-td">
-                <h4>Puntos del mes anterior</h4>
+                <h4>Puntos del mes actual</h4>
                 <p>1244</p>
             </div>
             <div class="puntuaciones-textos-table-td">
-                <h4>Puntos del mes anterior</h4>
+                <h4>Acumulado total</h4>
                 <p>1244</p>
             </div>
             <div class="puntuaciones-textos-table-td">
-                <h4>Puntos del mes anterior</h4>
+                <h4>Objetivo</h4>
                 <p>1244</p>
             </div>
            
