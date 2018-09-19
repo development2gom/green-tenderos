@@ -185,6 +185,21 @@ footer.footer
 			padding: 4px 16px
 			overflow-y: auto
 			width: 630px
+
+			// .ap-textos-item
+			// 	align-items: center
+			// 	// background-color: rgba(purple,.6)
+			// 	display: flex
+			// 	justify-content: center
+			// 	span
+			// 		color: $white
+			// 		display: flex
+			// 		@extend .fs-18
+			// 		margin-left: 12px
+
+			// 	img
+			// 		width: 48px
+
 			p
 				color: rgba($white,.75)
 				@extend.fs-16
@@ -242,14 +257,30 @@ footer.footer
 					margin-left: 16px
 
 		.tc-textos
+			align-items: center
 			display: flex
 			flex-direction: column
-			height: 40vh
+			// height: 40vh
 			margin: 3vh auto 0
 			max-width: 80%
 			padding: 4px 16px
 			overflow-y: auto
 			width: 630px
+
+			.tc-textos-item
+				align-items: center
+				// background-color: rgba(purple,.6)
+				display: flex
+				justify-content: center
+				span
+					color: $white
+					display: flex
+					@extend .fs-18
+					margin-left: 12px
+
+				img
+					width: 48px
+				
 			p
 				color: rgba($white,.75)
 				@extend .fs-16
@@ -299,10 +330,11 @@ footer.footer
 			// background-color: rgba(red,.2)
 			display: flex
 			flex-direction: column
-			// height: 40vh
+			min-height: 50vh
 			margin: 0 auto
 			max-width: 80%
 			padding: 4px 16px
+			position: relative
 			width: 830px
 			.premios-textos-img
 				display: flex
@@ -328,6 +360,11 @@ footer.footer
 				line-height: 1.6
 				margin-bottom: 12px
 				text-align: center
+				&.p-bottom
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
 
 	
 .ganadores
@@ -551,7 +588,7 @@ footer.footer
 				display: flex
 				flex-wrap: wrap
 				height: 100%
-				overflow-y: visible
+				overflow-y: auto
 				padding: 0 40px
 				width: 50%
 

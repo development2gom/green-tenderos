@@ -31,7 +31,7 @@ $this->params['classBody'] = "dashboard";
 
         <div class="dash-col dash-actions">
             <div class="dash-actions-image">
-                <button class="btn btn-primary">Ingresar</button>
+                <a href="<?=Url::base()?>/login" class="btn btn-primary">Ingresar</a>
             </div>
         </div>
 
