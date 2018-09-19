@@ -223,9 +223,11 @@ class SiteController extends Controller
     }
 
     public function actionPuntuacion(){
-        $tienda = Yii::$app->user->identity;
+        //$tienda = Yii::$app->user->identity;
         
         $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$tienda->txt_clave_tienda])->one();
+        print_r($tienda);
+        exit;
         $puntuajeActual = $tienda->wrkPuntuajeActuals;
 
         $imagenes = EntImagenes::find()->where(['b_publicado'=>1])->all();
