@@ -290,7 +290,7 @@ footer.footer
 				margin-right: 2vw
 			h2
 				color: $white
-				font-size: 4rem
+				font-size: 3.6rem
 				@extend .fw-bold
 				line-height: 1
 				text-transform: uppercase
@@ -406,3 +406,80 @@ footer.footer
 						line-height: 1.6
 						margin-bottom: 12px
 						text-align: left
+
+
+.testimonios
+	background-image: url('../images/bkgd.jpg')
+	background-position: 50%
+	background-repeat: no-repeat
+	background-size: cover
+	display: block
+	position: relative
+	width: 100%
+	z-index: 2
+	.contend
+		min-height: 100vh
+		width: 100%
+	.testimonios-contend
+		align-items: flex-start
+		// background-color: rgba(red,.3)
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		.testimonios-title
+			align-items: center
+			display: flex
+			justify-content: flex-start
+			margin-top: 80px
+			padding: 0 32px
+			width: 100%
+			img
+				height: 120px
+				margin-right: 2vw
+			h2
+				color: $white
+				font-size: 3.6rem
+				@extend .fw-bold
+				line-height: 1
+				text-transform: uppercase
+
+		.testimonios-textos
+			display: flex
+			height: 40vh
+			justify-content: space-between
+			margin: 0 auto
+			max-width: 90%
+			position: relative
+			overflow: hidden
+			width: 1024px
+			.testimonios-imagenes-col,
+			.testimonios-videos-col
+				display: flex
+				flex-wrap: wrap
+				height: 100%
+				overflow-y: visible
+				padding: 0 40px
+				width: 50%
+
+			.testimonios-imagenes-col
+
+				.testimonios-imagenes-col-a
+					margin-bottom: 24px
+					margin-right: 10%
+					width: 45%
+					&:nth-child(2n + 2)
+						margin-right: 0
+					
+					img
+						max-width: 100%
+						width: 100%
+
+			
+			.testimonios-videos-col
+				
+				.testimonios-imagenes-col-b
+					margin-bottom: 24px
+					width: 90%
+					img
+						max-width: 100%
+						width: 100%
