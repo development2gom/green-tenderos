@@ -23,17 +23,17 @@ use app\models\Constantes;
         foreach($imagenes as $imagen){
             echo $imagen->txt_url;
         ?>
-            <img src="<?= Constantes::URL_ADMIN . "/imagenes-ganadores/" . $imagen->txt_url?>" alt="">
+            <video src="<?= Constantes::URL_ADMIN . "/imagenes-ganadores/" . $imagen->txt_url?>" alt="">
         <?php
         }
 
         foreach($videos as $video){
             echo $video->txt_url;
         ?>
-            <img src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" alt="">
+            <video src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $imagen->txt_url?>" alt=""> </video>
             <video width="320" height="240" controls>
-                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/mp4">
-                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/ogg">
+                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $imagen->txt_url?>" type="video/mp4">
+                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $imagen->txt_url?>" type="video/ogg">
                 Your browser does not support the video tag.
             </video>
         <?php
