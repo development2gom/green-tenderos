@@ -167,7 +167,7 @@ class SiteController extends Controller
             $clave_bodega = $_POST['CatTiendas']['txt_clave_bodega'];
 
             if($tienda = $model->validarExistaTienda($clave_tienda, $clave_bodega)){
-                return $this->redirect(['ingresar', 'token'=>$tienda->txt_clave_tienda]);
+                return $this->redirect(['puntuacion', 'token'=>$tienda->txt_clave_tienda]);
             }else{
                 $model->addError('txt_clave_bodega', "Tienda o bodega no encontradas");
             }
