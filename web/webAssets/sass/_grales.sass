@@ -194,6 +194,7 @@ footer.footer
 				margin-bottom: 32px
 				text-align: justify
 
+
 .terminos-condiciones
 	background-image: url('../images/bkkd-textos.jpg')
 	background-position: 50%
@@ -251,9 +252,79 @@ footer.footer
 			width: 630px
 			p
 				color: rgba($white,.75)
-				@extend.fs-16
+				@extend .fs-16
 				font-style: italic
 				letter-spacing: 1px
 				line-height: 1.6
 				margin-bottom: 32px
 				text-align: justify
+
+
+.premios
+	background-image: url('../images/bkgd-premios.jpg')
+	background-position: 50%
+	background-repeat: no-repeat
+	background-size: cover
+	display: block
+	position: relative
+	width: 100%
+	z-index: 2
+	.contend
+		min-height: 100vh
+		width: 100%
+	.premios-contend
+		align-items: flex-start
+		// background-color: rgba(red,.3)
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		.premios-title
+			align-items: center
+			display: flex
+			justify-content: flex-start
+			margin-top: 80px
+			padding: 0 32px
+			width: 100%
+			img
+				height: 120px
+				margin-right: 2vw
+			h2
+				color: $white
+				font-size: 4rem
+				@extend .fw-bold
+				line-height: 1
+				text-transform: uppercase
+
+		.premios-textos
+			// background-color: rgba(red,.2)
+			display: flex
+			flex-direction: column
+			// height: 40vh
+			margin: 0 auto
+			max-width: 80%
+			padding: 4px 16px
+			width: 830px
+			.premios-textos-img
+				display: flex
+				justify-content: center
+				position: relative
+				p
+					font-style: normal
+					left: 8px
+					position: absolute
+					text-align: left
+					top: 64px
+					width: 306px
+				img
+					margin: 0 auto
+					max-width: 90%
+					width: 600px
+			p
+				color: $white
+				@extend .fs-16
+				@extend .fw-bold
+				font-style: italic
+				letter-spacing: 1px
+				line-height: 1.6
+				margin-bottom: 12px
+				text-align: center
