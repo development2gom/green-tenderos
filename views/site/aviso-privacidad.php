@@ -62,7 +62,7 @@ $this->params['classBody'] = "aviso-privacidad";
         <p class="p6"><span class="s1"><strong>6. Mecanismos para que el titular pueda manifestar su negativa para el tratamiento de sus datos personales para aquellas finalidades que no son necesarias, ni hayan dado origen a la relaci&oacute;n jur&iacute;dica con el responsable.</strong></span></p>
         <p class="p7"><span class="s1">De manera adicional, utilizaremos su informaci&oacute;n personal para las siguientes finalidades que no son necesarias para el servicio solicitado, pero que nos permiten y facilitan brindarle una mejor atenci&oacute;n: &nbsp;</span></p>
         <ul class="ul1">
-        <li class="li8"><span class="s1">Finalidad secundaria para fines medir el nivel de satisfacci&oacute;n de cliente o de la calidad de nuestros productos o servicios.</span></li>
+        <li class="li3"><span class="s1">Finalidad secundaria para fines medir el nivel de satisfacci&oacute;n de cliente o de la calidad de nuestros productos o servicios.</span></li>
         </ul>
         <p class="p8"><span class="s1"><em>En caso de que no desee que sus datos personales se utilicen para estos fines, ind&iacute;quelo a continuaci&oacute;n: </em></span></p>
         <p class="p8"><span class="s1"><strong>□ <span class="Apple-converted-space">&nbsp; &nbsp; </span><em>No consiento que mis datos personales se utilicen para los fines secundarios mencionados en los p&aacute;rrafos anteriores.</em></strong></span></p>
@@ -78,7 +78,7 @@ $this->params['classBody'] = "aviso-privacidad";
         <li class="li3"><span class="s1">La direcci&oacute;n IP.</span></li>
         <li class="li3"><span class="s1">El sitio que visit&oacute; antes de entrar al nuestro.</span></li>
         </ul>
-        <p class="p2">&nbsp;</p>
+        
         <p class="p3"><span class="s1"><strong>8. Opciones y medios para limitar el uso o divulgaci&oacute;n de datos personales</strong></span></p>
          
         <p class="p3"><span class="s1">Usted puede dejar de recibir mensajes por correo electr&oacute;nico, impresos, por tel&eacute;fono fijo o celular comunic&aacute;ndose con nuestro Responsable de Datos Personales. </span></p>
@@ -103,7 +103,7 @@ $this->params['classBody'] = "aviso-privacidad";
         <ul class="ul1">
         <li class="li3"><span class="s1">Para el caso de interdictos (incapacitados), los documentos para acreditar la representaci&oacute;n legal ser&aacute;n: acta de interdicto y credencial con fotograf&iacute;a de la persona que ostente esta situaci&oacute;n jur&iacute;dica, ya sea Credencial para votar emitida por el Instituto Federal Electoral (&ldquo;IFE&rdquo;), Pasaporte vigente, C&eacute;dula Profesional o documento migratorio (este &uacute;ltimo caso para el caso de extranjeros). </span></li>
         </ul>
-        <p class="p10">&nbsp;</p>
+        
         <p class="p3"><span class="s1">5.- Descripci&oacute;n clara y precisa de los datos personales respecto de los cuales busca ejercer alguno de los Derechos ARCO, cu&aacute;l es el derecho a ejercer y las razones por las cuales desea ejercitarlo;</span></p>
         
         <p class="p3"><span class="s1">6.- Cualquier documento o informaci&oacute;n que acredite que sus datos personales se encuentran en propiedad de <strong>Grupo Gepp</strong>.</span></p>
@@ -126,14 +126,14 @@ $this->params['classBody'] = "aviso-privacidad";
         <p class="p3"><span class="s1"><strong>&ldquo;GEPP&rdquo; </strong>podr&aacute; negar el ejercicio de los Derechos ARCO, en los siguientes supuestos:</span></p>
          
         <ol class="ol1">
-        <li class="li3"><span class="s1">Cuando usted no sea el titular de los datos personales, o no haya acreditado la representaci&oacute;n del titular;</span></li>
-        <li class="li3"><span class="s1">Cuando sus datos personales no obren en la base de datos del Responsable;</span></li>
-        <li class="li3"><span class="s1">Cuando se lesionen los derechos de un tercero;</span></li>
-        <li class="li3"><span class="s1">Cuando exista un impedimento legal o la resoluci&oacute;n de una autoridad competente que restrinja sus Derechos ARCO;</span></li>
-        <li class="li3"><span class="s1">En caso de cancelaci&oacute;n, cuando los datos personales sean objeto de tratamiento para la prevenci&oacute;n o para el diagn&oacute;stico m&eacute;dico o la gesti&oacute;n de servicios de salud, o;</span></li>
-        <li class="li3"><span class="s1">Cuando la rectificaci&oacute;n, cancelaci&oacute;n u oposici&oacute;n haya sido previamente realizada.</span></li>
+            <li class="li3"><span class="s1">Cuando usted no sea el titular de los datos personales, o no haya acreditado la representaci&oacute;n del titular;</span></li>
+            <li class="li3"><span class="s1">Cuando sus datos personales no obren en la base de datos del Responsable;</span></li>
+            <li class="li3"><span class="s1">Cuando se lesionen los derechos de un tercero;</span></li>
+            <li class="li3"><span class="s1">Cuando exista un impedimento legal o la resoluci&oacute;n de una autoridad competente que restrinja sus Derechos ARCO;</span></li>
+            <li class="li3"><span class="s1">En caso de cancelaci&oacute;n, cuando los datos personales sean objeto de tratamiento para la prevenci&oacute;n o para el diagn&oacute;stico m&eacute;dico o la gesti&oacute;n de servicios de salud, o;</span></li>
+            <li class="li3"><span class="s1">Cuando la rectificaci&oacute;n, cancelaci&oacute;n u oposici&oacute;n haya sido previamente realizada.</span></li>
         </ol>
-        <p class="p11">&nbsp;</p>
+        
         <p class="p3"><span class="s1">La Negativa podr&aacute; ser parcial, en cuyo caso, <strong>&ldquo;GEPP&rdquo; </strong>efectuar&aacute; el acceso, rectificaci&oacute;n, cancelaci&oacute;n u oposici&oacute;n en la parte procedente.</span></p>
          
         <p class="p3"><span class="s1">El ejercicio de los "Derechos ARCO" ser&aacute; gratuito, pero si Usted reitera su solicitud en un periodo menor a 12 (doce) meses, los costos ser&aacute;n de 3 (tres) d&iacute;as de Salario M&iacute;nimo General Vigente en el Distrito Federal, m&aacute;s el Impuesto al Valor Agregado, a menos que existan modificaciones sustanciales al Aviso de Privacidad que motiven nuevas Solicitudes de Ejercicio de Derechos ARCO. Usted deber&aacute; de cubrir los gastos justificados de env&iacute;o o el costo de reproducci&oacute;n en copias u otros formatos.</span></p>
@@ -159,16 +159,16 @@ $this->params['classBody'] = "aviso-privacidad";
         <p class="p3"><span class="s1">Nos reservamos el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad.</span></p>
          
         <p class="p3"><span class="s1">Estas modificaciones estar&aacute;n disponibles al p&uacute;blico a trav&eacute;s de cualquiera de los siguientes medios: (i) anuncios visibles en las oficinas corporativas; (ii) tr&iacute;pticos o folletos disponibles en las oficinas corporativas; (iii) en nuestra p&aacute;gina de Internet <a href="http://www.gepp.com.mx"><span class="s4">www.gepp.com.mx</span></a><span class="Apple-converted-space">&nbsp; </span>o (iv) se las haremos llegar al &uacute;ltimo correo electr&oacute;nico que nos haya proporcionado. </span></p>
-        <p class="p2">&nbsp;</p>
+        
         <p class="p3"><span class="s1"><strong>14. Derecho de promover los procedimientos de protecci&oacute;n de derechos y de verificaci&oacute;n que sustancia el Instituto</strong></span></p>
          
         <p class="p3"><span class="s1">Cualquier queja o informaci&oacute;n adicional respecto al tratamiento de sus datos personales o duda en relaci&oacute;n con la Ley Federal de Protecci&oacute;n de Datos Personales en Posesi&oacute;n de los Particulares o con su Reglamento, podr&aacute; dirigirla al IFAI.<span class="Apple-converted-space">&nbsp; </span>Para mayor informaci&oacute;n visite <a href="http://www.ifai.org.mx/"><span class="s6">www.ifai.org.mx</span></a> </span></p>
          
          
         <p class="p12"><span class="s1">Nombre del Titular </span></p>
-        <p class="p2">&nbsp;</p>
+        
         <p class="p12"><span class="s1">__________________________________________</span></p>
-        <p class="p2">&nbsp;</p>
+        
         <p class="p12"><span class="s1">Firma Aut&oacute;grafa___________________________________</span></p>
     </div>
 
