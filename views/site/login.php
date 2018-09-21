@@ -30,7 +30,7 @@ $this->registerJsFile(
 		
 		<?php 
 		$form = ActiveForm::begin([
-			'id' => 'form-ajax'
+			'id' => 'form-ajax-login'
 		]);
 		?>
 			
@@ -51,7 +51,7 @@ $this->registerJsFile(
 			</div>
 
 			<div class="form-group form-group-actions">
-				<?= Html::submitButton('<span class="ladda-label">Ingresar</span>', ["data-style" => "zoom-in", 'class' => 'btn btn-primary ladda-button', 'name' => 'login-button']); ?>
+				<?= Html::button('<span class="ladda-label">Ingresar</span>', ["data-style" => "zoom-in", 'class' => 'btn btn-primary ladda-button js-btn-submit']); ?>
 			</div>
 
 		<?php ActiveForm::end(); ?>
