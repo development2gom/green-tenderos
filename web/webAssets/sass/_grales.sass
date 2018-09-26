@@ -274,7 +274,7 @@ footer.footer
 			flex-direction: column
 			// height: 40vh
 			margin: 3vh auto 0
-			max-width: 80%
+			max-width: 94%
 			padding: 4px 16px
 			overflow-y: auto
 			width: 630px
@@ -292,15 +292,80 @@ footer.footer
 
 				img
 					width: 48px
+
+			.ap-textos-desc
+				min-height: 100px
+				max-height: 50vh
+				margin: 0 auto
+				max-width: 100%
+				overflow-y: auto
+				width: 600px
 				
-			p
-				color: rgba($white,.75)
-				@extend .fs-16
-				font-style: italic
-				letter-spacing: 1px
-				line-height: 1.6
-				margin-bottom: 32px
-				text-align: justify
+				p
+					color: rgba($white,.75)
+					@extend .fs-16
+					font-style: italic
+					letter-spacing: 1px
+					line-height: 1.6
+					margin-bottom: 32px
+					text-align: justify
+
+
+			.tc-textos-table
+				// background-color: purple
+				display: flex
+				flex-direction: column
+				margin: 0 auto
+				max-width: 100%
+				width: 600px
+				.tc-textos-table-head
+					background-color: $white
+					display: flex
+					flex-wrap: wrap
+					padding: 12px 24px
+					width: 100%
+					.tc-textos-table-th
+						color: $primary
+						@extend .fw-bold
+						text-transform: uppercase
+						width: 50%
+						+respond-to(xs)
+							text-align: center
+
+				.tc-textos-table-body
+					display: flex
+					flex-direction: column
+					min-height: 100px
+					max-height: 30vh
+					overflow-y: auto
+					width: 100%
+					.tc-textos-table-tr
+						align-items: center
+						border-bottom: 1px solid rgba($white,.6)
+						display: flex
+						flex-wrap: wrap
+						padding: 8px 24px
+						width: 100%
+						+respond-to(xs)
+							padding: 2px 16px
+						
+						.tc-textos-table-td
+							color: $white
+							text-transform: uppercase
+							width: 50%
+							padding: 0
+							&:last-child
+								+respond-to(xs)
+									text-align: center
+							p
+								@extend .fs-16
+								@extend .fw-light
+								line-height: 1.1
+								padding: 10px 0
+								white-space: pre-line
+								word-wrap: break-word
+								overflow-wrap: break-word
+								width: 100%
 
 
 .premios
