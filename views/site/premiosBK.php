@@ -8,7 +8,14 @@ $this->params['classBody'] = "premios";
 // site-navbar-small site-top
 ?>
 
-<!-- <div class="contend premios-contend">
+<div class="contend premios-contend">
+
+    <div class="premios-title">
+        <img src="<?=Url::base()?>/webAssets/images/logo-cdg.png" alt="">
+        <h2>
+            Premios
+        </h2>
+    </div>
     
     <div class="premios-textos">
         <div class="premios-textos-img">
@@ -17,4 +24,4 @@ $this->params['classBody'] = "premios";
         <p class="t-center p-bottom">Automóviles marca Nissan tipo sedán March Active modelo 2018.</p>
     </div>
 
-</div> -->
+</div>

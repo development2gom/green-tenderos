@@ -30,7 +30,7 @@ $this->params['classBody'] = "terminos-condiciones";
 
             <p class="p1"><span class="s1"><strong>TÉRMINOS Y CONDICIONES</strong></span></p>
         
-            <p class="p3"><span class="s1"><strong>Lorem ipsum</strong></span></p>
+            <p class="p3"><span class="s1"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tincidunt arcu. Praesent molestie convallis dolor in dictum. Sed ut nisi sem. Nunc laoreet varius rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer tempor imperdiet neque in blandit. </strong></span></p>
         
         </div>
 
