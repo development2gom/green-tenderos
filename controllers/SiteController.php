@@ -163,10 +163,10 @@ class SiteController extends Controller
 
         if($_POST){
             //print_r($_POST['CatTiendas']['txt_clave_tienda']);exit;
-            $clave_tienda = $_POST['CatTiendas']['txt_clave_tienda'];
+            $nud = $_POST['CatTiendas']['txt_clave_tienda'];
             $clave_bodega = $_POST['CatTiendas']['txt_clave_bodega'];
 
-            if($tienda = $model->validarExistaTienda($clave_tienda, $clave_bodega)){
+            if($tienda = $model->validarExistaTienda($nud, $clave_bodega)){
                 return $this->redirect(['ingresar', 'token'=>$tienda->txt_clave_tienda]);
             }else{
                 $model->addError('txt_clave_bodega', "Tienda o bodega no encontradas");
