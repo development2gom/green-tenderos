@@ -127,8 +127,8 @@ class CatTiendas extends \yii\db\ActiveRecord implements IdentityInterface
         return $this->getAuthKey() === $authKey;
     }
 
-    public function validarExistaTienda($clave_tienda, $clave_bodega){
-        $tienda = CatTiendas::find()->where(['txt_clave_tienda'=>$clave_tienda, 'txt_clave_bodega'=>$clave_bodega])->one();
+    public function validarExistaTienda($nud, $clave_bodega){
+        $tienda = CatTiendas::find()->where(['txt_nud'=>$nud, 'txt_clave_bodega'=>$clave_bodega])->one();
         if($tienda){
             return $tienda;
         }
