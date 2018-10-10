@@ -44,7 +44,7 @@ $this->params['classBody'] = "puntuaciones";
         </div>
     </div>
 
-    <p><?=$puntuajeActual->txt_leyenda?></p>
+    <p class="text-white"><?=$puntuajeActual->txt_leyenda?></p>
 
 </div>
 
