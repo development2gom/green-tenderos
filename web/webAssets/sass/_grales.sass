@@ -369,11 +369,12 @@ footer.footer
 
 
 .premios
+	background-attachment: fixed
 	background-color: $white
-	background-image: url('../images/bkgd-premios-2.png')
+	background-image: url('../images/bkgd-premios.jpg')
 	background-position: 50% 0
 	background-repeat: no-repeat
-	background-size: contain
+	background-size: cover
 	display: block
 	position: relative
 	width: 100%
@@ -387,6 +388,7 @@ footer.footer
 		display: flex
 		flex-wrap: wrap
 		justify-content: center
+		padding-bottom: 66px
 		.premios-title
 			align-items: center
 			display: flex
@@ -408,7 +410,7 @@ footer.footer
 			// background-color: rgba(red,.2)
 			display: flex
 			flex-direction: column
-			min-height: 50vh
+			min-height: 68vh
 			margin: 0 auto
 			max-width: 80%
 			padding: 4px 16px
@@ -444,6 +446,16 @@ footer.footer
 					left: 0
 					right: 0
 
+		.premios-imagen
+			align-items: center
+			display: flex
+			justify-content: center
+			margin: 16vh auto 0
+			max-width: 90%
+			width: 1024px
+			img
+				max-width: 90%
+				width: 90%
 	
 .ganadores
 	background-image: url('../images/bkgd-ganadores.jpg')
