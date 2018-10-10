@@ -3,7 +3,6 @@
 use yii\helpers\Url;
 use app\models\Constantes;
 
-
 $this->title = "Puntuación";
 
 $this->params['classBody'] = "puntuaciones";
@@ -44,6 +43,8 @@ $this->params['classBody'] = "puntuaciones";
            
         </div>
     </div>
+
+    <p><?=$puntuajeActual->txt_leyenda?></p>
 
 </div>
 
