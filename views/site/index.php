@@ -14,7 +14,7 @@ $this->params['classBody'] = "dashboard";
     
         <div class="dash-col dash-menu">
             <a href="<?=Url::base()?>/site/aviso-privacidad" class="btn btn-primary btn-lg active" role="button">Aviso de Privacidad</a>
-            <a href="<?=Url::base()?>/site/terminos-condiciones" class="btn btn-primary btn-lg active" role="button">Terminos y Condiciones</a>
+            <a href="<?=Url::base()?>/site/terminos-condiciones" class="btn btn-primary btn-lg active" role="button">Términos y Condiciones</a>
             <a href="<?=Url::base()?>/site/ganadores" class="btn btn-primary btn-lg active" role="button">Ganadores</a>
             <a href="<?=Url::base()?>/site/testimonios" class="btn btn-primary btn-lg active" role="button">Testimonios</a>
             <a href="<?=Url::base()?>/site/premios" class="btn btn-primary btn-lg active" role="button">Premios</a>

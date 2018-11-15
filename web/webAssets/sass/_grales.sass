@@ -272,12 +272,13 @@ footer.footer
 			align-items: center
 			display: flex
 			flex-direction: column
-			// height: 40vh
+			height: 70vh
 			margin: 3vh auto 0
 			max-width: 94%
+			min-height: 100px
 			padding: 4px 16px
 			overflow-y: auto
-			width: 630px
+			width: 960px
 
 			.tc-textos-item
 				align-items: center
@@ -294,13 +295,46 @@ footer.footer
 					width: 48px
 
 			.ap-textos-desc
-				min-height: 100px
-				max-height: 50vh
+				// min-height: 100px
+				// max-height: 50vh
 				margin: 0 auto
 				max-width: 100%
-				overflow-y: auto
-				width: 600px
-				
+				// overflow-y: auto
+				width: 100%
+
+				h2
+					color: $white
+					font-size: 1.6rem
+					font-weight: $bold
+					letter-spacing: 1px
+					margin: 40px 0 30px
+
+				h3
+					color: $white
+					font-size: 1rem
+					font-weight: $bold
+					letter-spacing: 1px
+					margin-bottom: 2px
+
+				ul
+					list-style-position: outside
+					margin-bottom: 30px
+					padding-left: 26px
+					li
+						color: rgba($white,.75)
+						letter-spacing: 1px
+						line-height: 1.6
+						margin-bottom: 6px
+
+				table
+					border: 1px solid rgba($white,.75)
+					margin-bottom: 40px
+					tr
+						td
+							border-bottom: 1px solid rgba($white,.75)
+							border-right: 1px solid rgba($white,.75)
+							padding: 12px 8px
+
 				p
 					color: rgba($white,.75)
 					@extend .fs-16
@@ -309,7 +343,13 @@ footer.footer
 					line-height: 1.6
 					margin-bottom: 32px
 					text-align: justify
-
+					&.text-italic
+						font-style: italic
+					
+					.bold
+						font-weight: $bold
+					.up
+						text-transform: uppercase
 
 			.tc-textos-table
 				// background-color: purple
@@ -317,7 +357,7 @@ footer.footer
 				flex-direction: column
 				margin: 0 auto
 				max-width: 100%
-				width: 600px
+				width: 100%
 				.tc-textos-table-head
 					background-color: $white
 					display: flex
@@ -371,7 +411,7 @@ footer.footer
 .premios
 	background-attachment: fixed
 	background-color: $white
-	background-image: url('../images/bkgd-premios.jpg')
+	background-image: url('../images/bkgd-ganadores.jpg')
 	background-position: 50% 0
 	background-repeat: no-repeat
 	background-size: cover
@@ -407,55 +447,85 @@ footer.footer
 				text-transform: uppercase
 
 		.premios-textos
-			// background-color: rgba(red,.2)
 			display: flex
-			flex-direction: column
+			flex-wrap: wrap
 			min-height: 68vh
 			margin: 0 auto
-			max-width: 80%
-			padding: 4px 16px
+			max-width: 90%
+			padding: 0
 			position: relative
-			width: 830px
-			.premios-textos-img
-				display: flex
-				justify-content: center
-				position: relative
-				p
-					font-style: normal
-					left: 8px
-					position: absolute
-					text-align: left
-					top: 64px
-					width: 306px
-				img
-					margin: 0 auto
-					max-width: 90%
-					width: 600px
+			width: 90%
+
+			.premios-title
+				padding: 0
+
 			p
 				color: $white
-				@extend .fs-16
-				@extend .fw-bold
 				font-style: italic
 				letter-spacing: 1px
 				line-height: 1.6
 				margin-bottom: 12px
-				text-align: center
-				&.p-bottom
-					position: absolute
-					bottom: 0
-					left: 0
-					right: 0
 
-		.premios-imagen
-			align-items: center
-			display: flex
-			justify-content: center
-			margin: 16vh auto 0
-			max-width: 90%
-			width: 1024px
-			img
-				max-width: 90%
-				width: 90%
+			.premios-textos-text
+				position: relative
+				padding: 12vh 24px 16px
+				width: 65%
+
+				p
+					@extend .fs-16
+					@extend .fw-regular
+					position: absolute
+					span
+						display: block
+					&.t-left
+						text-align: left
+					&.t-center
+						margin-top: 24px
+						text-align: center
+						width: 100%
+
+				.premios-imagen
+					align-items: center
+					display: flex
+					justify-content: flex-end
+					margin: 0 auto
+					max-width: 100%
+					width: 100%
+					img
+						max-width: 80%
+						width: 80%
+						
+			.premios-textos-lugares
+				display: block
+				width: 35%
+				.premios-textos-lugares-item
+					align-items: flex-end
+					display: flex
+					flex-wrap: wrap
+					margin-bottom: 24px
+					width: 100%
+
+					.premios-textos-lugares-item-img
+						padding-right: 16px
+						width: calc(100% - 160px)
+
+						img
+							max-width: 100%
+
+					.premios-textos-lugares-item-txt
+						width: 160px
+
+						p,
+						span
+							color: $white
+							display: inline-block
+							@extend .fs-30
+							@extend .fw-bold
+							text-transform: uppercase
+
+			
+
+		
 	
 .ganadores
 	background-image: url('../images/bkgd-ganadores.jpg')
@@ -628,6 +698,19 @@ footer.footer
 						min-height: 100px
 						text-align: center
 
+		p.text-white
+			align-items: center
+			color: $white
+			display: flex
+			@extend .fs-16
+			@extend .fw-regular
+			font-style: italic
+			letter-spacing: 1px
+			// line-height: 1.6
+			justify-content: center
+			margin-bottom: 12px
+			min-height: 100px
+			text-align: center
 
 .testimonios
 	background-image: url('../images/bkgd.jpg')
