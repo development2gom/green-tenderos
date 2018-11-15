@@ -22,6 +22,7 @@ use app\models\CatNiveles;
 use app\models\Constantes;
 use app\models\EntImagenes;
 use app\models\EntVideos;
+use app\models\WrkConcursosResultados;
 
 class SiteController extends Controller
 {
@@ -224,6 +225,15 @@ class SiteController extends Controller
 
     public function actionPuntuacion(){
         $tienda = Yii::$app->user->identity;
+        // @todo poner la condicion para redireccionar al final del concurso o resultado de mes por mes
+        if(true){
+            $resultadoFinal = WrkConcursosResultados::find()->where([
+                "txt_bodega"=>$tienda->txt_clave_bodega,
+                "txt_nud"=>$tienda->txt_nud
+                ])->one();
+           return $this->render("resultados-finales", ["resultadoFinal"=>$resultadoFinal]);     
+        }
+        
 
         $puntuajeActual = $tienda->wrkPuntuajeActuals;
 
