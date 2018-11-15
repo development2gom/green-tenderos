@@ -34,7 +34,7 @@ $this->registerJsFile(
 		]);
 		?>
 			
-			<?= $form->field($model, 'txt_clave_tienda')->textInput(["class" => "form-control", 'placeholder'=>'Clave tienda'])->label(false) ?>
+			<?= $form->field($model, 'txt_clave_tienda')->textInput(["class" => "form-control", 'placeholder'=>'NUD'])->label(false) ?>
 
 			<?= $form->field($model, 'txt_clave_bodega')->textInput(["class" => "form-control", 'placeholder'=>'Clave bodega'])->label(false) ?>
 
