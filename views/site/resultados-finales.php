@@ -25,26 +25,26 @@ $this->params['classBody'] = "puntuaciones";
         <div class="puntuaciones-textos-table">
 
             <div class="puntuaciones-textos-table-td">
-                <h4>Total de puntos al cierre 2018</h4>
-                <p><?= number_format($resultadoFinal->num_total, 2, ".", "," )?></p>
+                <h4>TOTAL DE PUNTOS AL CIERRE 2018</h4>
+                <p><?= number_format($resultadoFinal->num_total, 2, ".", ",") ?></p>
             </div>
             <div class="puntuaciones-textos-table-td">
-                <h4>No de Folio</h4>
+                <h4>NO DE FOLIO</h4>
                 <p><?= $resultadoFinal->txt_folio ?></p>
             </div>
             <div class="puntuaciones-textos-table-td">
-                <h4>Zona</h4>
+                <h4>ZONA</h4>
                 <p><?= $resultadoFinal->txt_zona ?></p>
             </div>
             <div class="puntuaciones-textos-table-td">
-                <h4>Sorteo</h4>
+                <h4>SORTEO</h4>
                 <p><?= $resultadoFinal->txt_sorteo ?></p>
             </div>
            
         </div>
     </div>
 
-    <p><?=$resultadoFinal->txt_leyenda?></p>
+    <p class="text-white"><?=$resultadoFinal->txt_leyenda?></p>
 
 </div>
 
