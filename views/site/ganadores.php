@@ -23,7 +23,7 @@ $this->params['classBody'] = "ganadores";
         <h3>¡GANASTE!</h3>
         <div class="ganadores-textos-table">
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/m4M2ad-AQXc" frameborder="0" allowfullscreen></iframe>
+            
 
             <!-- <div class="ganadores-textos-table-td">
                 <p>. Rubén Vázquez Galván</p>
