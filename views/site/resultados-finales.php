@@ -24,7 +24,7 @@ $this->params['classBody'] = "puntuaciones";
         <h3><?=Yii::$app->user->identity->txt_nombre;?></h3>
         <div class="puntuaciones-textos-table">
 
-            <div clafchss="puntuaciones-textos-table-td">
+            <div class="puntuaciones-textos-table-td">
                 <h4>TOTAL DE PUNTOS AL CIERRE 2018</h4>
                 <p><?= number_format($resultadoFinal->num_total, 2, ".", ",") ?></p>
             </div>
