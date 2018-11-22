@@ -27,7 +27,7 @@ $this->params['classBody'] = "testimonios";
         ?>
               
             <div class="testimonios-imagenes-col-a">
-            <img src="<?= Constantes::URL_ADMIN . "/imagenes-ganadores/" . $imagen->txt_url?>" alt="">
+            <img src="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>" alt="">
             </div>
            
         <?php
@@ -43,8 +43,8 @@ $this->params['classBody'] = "testimonios";
                <div class="col-12">
             <div class="testimonios-imagenes-col-b">
             <video width="320" height="240" controls>
-                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/mp4">
-                <source src="<?= Constantes::URL_ADMIN . "/videos-ganadores/" . $video->txt_url?>" type="video/ogg">
+                <source src="<?= Constantes::URL_ADMIN . "/" . $video->txt_url?>" type="video/mp4">
+                <source src="<?= Constantes::URL_ADMIN . "/" . $video->txt_url?>" type="video/ogg">
                 Your browser does not support the video tag.
             </video>
             </div>
