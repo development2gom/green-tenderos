@@ -2,12 +2,33 @@
 use yii\helpers\Url;
 use app\models\Constantes;
 use app\models\EntVideos;
+use app\assets\AppAsset;
 /* @var $this yii\web\View */
 
 $this->title = "Testimonios";
 
 $this->params['classBody'] = "testimonios";
 // site-navbar-small site-top
+
+$this->registerCssFile(
+    '@web/webAssets/templates/classic/global/vendor/magnific-popup/magnific-popup.css',
+    ['depends' => [AppAsset::className()]]
+);
+
+$this->registerCssFile(
+    '@web/webAssets/templates/classic/topbar/assets/examples/css/pages/gallery.css',
+    ['depends' => [AppAsset::className()]]
+);
+
+$this->registerJsFile(
+    '@web/webAssets/templates/classic/topbar/assets/examples/js/pages/gallery.js',
+    ['depends' => [AppAsset::className()]]
+);
+
+$this->registerJsFile(
+    '@web/webAssets/templates/classic/global/vendor/magnific-popup/jquery.magnific-popup.min.js',
+    ['depends' => [AppAsset::className()]]
+);
 ?>
 
 <div class="contend testimonios-contend">
@@ -35,33 +56,49 @@ $this->params['classBody'] = "testimonios";
            }
         ?>
         </div>
-        <div class="testimonios-videos-col">
-        <?php
-        foreach($videos as $video){
-            
-        ?>
-            <div class="row"> 
-               <div class="col-12">
-                    <div class="testimonios-imagenes-col-b">
-                        <?php
-                        /**
-                         * Separar url de youtube y el id del video
-                         */
-                        $arrayUrl = explode('=', $video->txt_url);
-                        ?>
-                        <iframe width="420" height="315"
-                            src="https://www.youtube.com/embed/<?= $arrayUrl[1] ?>">
-                        </iframe>
+
+        <div class="page-gallery-body">
+            <div class="testimonios-videos-col">
+                <?php
+                foreach($videos as $video){
+                    
+                ?>
+                    <div class="row"> 
+                        <div class="col-12">
+                            <div class="testimonios-imagenes-col-b">
+                                <?php
+                                /**
+                                 * Separar url de youtube y el id del video
+                                 */
+                                // $arrayUrl = explode('=', $video->txt_url);
+                                ?>
+                                <!-- <iframe width="420" height="315"
+                                    src="https://www.youtube.com/embed/<?php // $arrayUrl[1] ?>">
+                                </iframe> -->
+
+
+                                <figure class="card-img-top overlay-hover overlay">
+                                    <video class="overlay-video overlay-figure overlay-scale" style="background-image: url('http://img.youtube.com/vi/<?= EntVideos::getIdVideoYoutube($video->txt_url) ?>/mqdefault.jpg') ">
+                                        <source src="http://img.youtube.com/vi/<?= EntVideos::getIdVideoYoutube($video->txt_url) ?>/mqdefault.jpg">
+                                        <!-- <source src="video.ogg" type="video/ogg">
+                                        <source src="video.webm" type="video/webm"> -->
+                                        Tu navegar no soporta la etiqueta de video.
+                                    </video> 
+
+                                    <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
+                                        <a class="icon wb-search mfp-iframe" href="<?= $video->txt_url ?>"></a>
+                                        <p class="card-block"><?= $video->txt_nombre ?></p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                
+                
+                    <?php
+                }
+                ?>
             </div>
-           
-        
-            <?php
-        }
-        ?>
         </div>
-
     </div>
-
 </div>
