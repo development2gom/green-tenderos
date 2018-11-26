@@ -59,4 +59,14 @@ class EntVideos extends \yii\db\ActiveRecord
     {
         return $this->hasOne(CatConcurso::className(), ['id_concurso' => 'id_concurso']);
     }
+
+    public static function getIdVideoYoutube($url) {
+		parse_str ( parse_url ( $url, PHP_URL_QUERY ), $params );
+		
+		if (key_exists ( 'v', $params )) {
+			return $params ['v'];
+		}
+		
+		return null;
+	}
 }

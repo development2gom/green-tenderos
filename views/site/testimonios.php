@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use app\models\Constantes;
+use app\models\EntVideos;
 /* @var $this yii\web\View */
 
 $this->title = "Testimonios";
@@ -41,14 +42,18 @@ $this->params['classBody'] = "testimonios";
         ?>
             <div class="row"> 
                <div class="col-12">
-            <div class="testimonios-imagenes-col-b">
-            <video width="320" height="240" controls>
-                <source src="<?= Constantes::URL_ADMIN . "/" . $video->txt_url?>" type="video/mp4">
-                <source src="<?= Constantes::URL_ADMIN . "/" . $video->txt_url?>" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-            </div>
-            </div>
+                    <div class="testimonios-imagenes-col-b">
+                        <?php
+                        /**
+                         * Separar url de youtube y el id del video
+                         */
+                        $arrayUrl = explode('=', $video->txt_url);
+                        ?>
+                        <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/<?= $arrayUrl[1] ?>">
+                        </iframe>
+                    </div>
+                </div>
             </div>
            
         
