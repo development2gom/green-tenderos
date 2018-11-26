@@ -50,6 +50,7 @@ $this->registerJsFile(
               
             <div class="testimonios-imagenes-col-a">
             <img src="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>" alt="">
+            <a class="icon wb-search" href="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>"></a>
             </div>
            
         <?php
