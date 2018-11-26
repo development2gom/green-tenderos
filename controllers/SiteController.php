@@ -230,7 +230,7 @@ class SiteController extends Controller
             $resultadoFinal = WrkConcursosResultados::find()->where([
                 "txt_bodega"=>$tienda->txt_clave_bodega,
                 "txt_nud"=>$tienda->txt_nud
-                ])->one();
+                ])->orderBy("id_concurso_resultado DESC")->one();
            return $this->render("resultados-finales", ["resultadoFinal"=>$resultadoFinal]);     
         }
         
