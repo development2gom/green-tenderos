@@ -58,8 +58,9 @@ $this->registerJsFile(
                         <figure class="card-img-top overlay-hover overlay">
                             <img src="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>" alt="">
                             <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
-                                <a class="icon wb-image" href="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>"></a>
+                                <a class="icon wb-search wb-image" href="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>"></a>
                             </figcaption>
+                            <p class="card-block"><?= $imagen->txt_nombre ?></p>
                         </figure>
                     </div>
                 
@@ -101,9 +102,9 @@ $this->registerJsFile(
                             </video> 
 
                             <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
-                                <a class="icon wb-play mfp-iframe" href="<?= $video->txt_url ?>"></a>
-                                <p class="card-block"><?= $video->txt_nombre ?></p>
+                                <a class="icon wb-search wb-play mfp-iframe" href="<?= $video->txt_url ?>"></a>
                             </figcaption>
+                            <p class="card-block"><?= $video->txt_nombre ?></p>
                         </figure>
                     </div>
             
