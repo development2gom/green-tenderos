@@ -748,8 +748,17 @@ footer.footer
 				line-height: 1
 				text-transform: uppercase
 
+		.testimonios-subtitle
+			margin-bottom: 32px
+			padding: 0 24px
+			width: 100%
+			h3
+				color: $white
+				text-transform: uppercase
+
 		.testimonios-textos
 			display: flex
+			flex-wrap: wrap
 			height: 40vh
 			justify-content: space-between
 			margin: 0 auto
@@ -757,37 +766,80 @@ footer.footer
 			position: relative
 			overflow: hidden
 			width: 1024px
-			.testimonios-imagenes-col,
-			.testimonios-videos-col
+
+			.testimonios-imagenes-row,
+			.testimonios-videos-row
 				display: flex
 				flex-wrap: wrap
+				min-height: 100%
 				height: 100%
 				overflow-y: auto
-				padding: 0 40px
+				padding: 0 16px
 				width: 50%
 
-			.testimonios-imagenes-col
+				.testimonios-imagenes-col,
+				.testimonios-videos-col
+					display: flex
+					flex-wrap: wrap
+					// min-height: 100%
+					// height: 100%
+					// overflow-y: auto
+					padding: 0 24px
+					width: 100%
 
-				.testimonios-imagenes-col-a
-					margin-bottom: 24px
-					margin-right: 10%
-					width: 45%
-					&:nth-child(2n + 2)
-						margin-right: 0
-					
-					img
-						max-width: 100%
-						width: 100%
+					.overlay-video
+						background-position: 50%
+						background-size: cover
+
+					.overlay-icon
+						align-items: center
+						display: flex
+						justify-content: center
+						padding: 0
+						z-index: 9
+						.icon
+							align-items: center
+							display: flex
+							height: 100%
+							justify-content: center
+							margin: 0
+							padding: 0
+							width: 100%
+
+					p
+						color: $white
+						font-size: 1rem
+						padding: 12px 8px 8px
+						position: relative
+						z-index: 6
+						
+
+			.testimonios-imagenes-row
+
+				.testimonios-imagenes-col
+
+					.testimonios-imagenes-col-a
+						margin-bottom: 24px
+						margin-right: 10%
+						width: 45%
+						&:nth-child(2n + 2)
+							margin-right: 0
+						
+						img
+							max-width: 100%
+							width: 100%
 
 			
-			.testimonios-videos-col
+			.testimonios-videos-row
+
+				.testimonios-videos-col
 				
-				.testimonios-imagenes-col-b
-					margin-bottom: 24px
-					width: 90%
-					img
-						max-width: 100%
-						width: 100%
+					.testimonios-imagenes-col-b
+						margin-bottom: 24px
+						width: 98%
+						img
+							max-width: 100%
+							width: 100%
 
 
 .login-page
