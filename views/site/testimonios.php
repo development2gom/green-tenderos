@@ -48,11 +48,12 @@ $this->registerJsFile(
             
         ?>
               
-            <div class="testimonios-imagenes-col-a">
-                <figure class="card-img-top overlay-hover overlay">
+            <div class="testimonios-imagenes-col-a" >
+                <figure class="card-img-top overlay-hover overlay" >
                     <img src="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>" alt="">
                     <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
                         <a class="icon wb-search" href="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>"></a>
+                        <p class="card-block"><?= $imagen->txt_nombre ?></p>
                     </figcaption>
                 </figure>
             </div>
