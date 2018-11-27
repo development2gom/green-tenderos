@@ -748,8 +748,17 @@ footer.footer
 				line-height: 1
 				text-transform: uppercase
 
+		.testimonios-subtitle
+			margin-bottom: 32px
+			padding: 0
+			width: 100%
+			h3
+				color: $white
+				text-transform: uppercase
+
 		.testimonios-textos
 			display: flex
+			flex-wrap: wrap
 			height: 40vh
 			justify-content: space-between
 			margin: 0 auto
@@ -757,8 +766,9 @@ footer.footer
 			position: relative
 			overflow: hidden
 			width: 1024px
-			.testimonios-imagenes-col,
-			.testimonios-videos-col
+
+			.testimonios-imagenes-row,
+			.testimonios-videos-row
 				display: flex
 				flex-wrap: wrap
 				height: 100%
@@ -766,28 +776,42 @@ footer.footer
 				padding: 0 40px
 				width: 50%
 
-			.testimonios-imagenes-col
+				.testimonios-imagenes-col,
+				.testimonios-videos-col
+					background-color: red
+					display: flex
+					flex-wrap: wrap
+					min-height: 100%
+					// overflow-y: auto
+					padding: 0 40px
+					width: 100%
 
-				.testimonios-imagenes-col-a
-					margin-bottom: 24px
-					margin-right: 10%
-					width: 45%
-					&:nth-child(2n + 2)
-						margin-right: 0
-					
-					img
-						max-width: 100%
-						width: 100%
+			.testimonios-imagenes-row
+
+				.testimonios-imagenes-col
+
+					.testimonios-imagenes-col-a
+						margin-bottom: 24px
+						margin-right: 10%
+						width: 45%
+						&:nth-child(2n + 2)
+							margin-right: 0
+						
+						img
+							max-width: 100%
+							width: 100%
 
 			
-			.testimonios-videos-col
+			.testimonios-videos-row
+
+				.testimonios-videos-col
 				
-				.testimonios-imagenes-col-b
-					margin-bottom: 24px
-					width: 90%
-					img
-						max-width: 100%
-						width: 100%
+					.testimonios-imagenes-col-b
+						margin-bottom: 24px
+						width: 98%
+						img
+							max-width: 100%
+							width: 100%
 
 
 .login-page
