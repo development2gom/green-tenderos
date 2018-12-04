@@ -41,16 +41,16 @@ header.header
 			transform: scaleX(-1)
 
 footer.footer
-	// background-color: rgba($secondary,.3)
 	bottom: 0
+	height: 50px
 	left: 0
 	padding-left: 32px
 	position: fixed
 	right: 0
 	z-index: -1
 	img.img-gepp
-		margin-bottom: 32px
-		width: 100px
+		margin-bottom: 8px
+		height: 90%
 
 .dashboard
 	background-image: url('../images/bkgd.jpg')
@@ -722,16 +722,19 @@ footer.footer
 	position: relative
 	width: 100%
 	z-index: 2
+
 	.contend
 		min-height: 100vh
 		width: 100%
+
 	.testimonios-contend
 		align-items: flex-start
 		// background-color: rgba(red,.3)
 		display: flex
-		flex-wrap: wrap
-		justify-content: center
+		flex-direction: column
+		justify-content: flex-start
 		.testimonios-title
+			// background-color: yellow
 			align-items: center
 			display: flex
 			justify-content: flex-start
@@ -739,11 +742,11 @@ footer.footer
 			padding: 0 32px
 			width: 100%
 			img
-				height: 120px
+				height: 80px
 				margin-right: 2vw
 			h2
 				color: $white
-				font-size: 3.6rem
+				font-size: 2.8rem
 				@extend .fw-bold
 				line-height: 1
 				text-transform: uppercase
@@ -757,9 +760,10 @@ footer.footer
 				text-transform: uppercase
 
 		.testimonios-textos
+			// background-color: green
 			display: flex
 			flex-wrap: wrap
-			height: 68vh
+			height: calc(100vh - 180px)
 			justify-content: space-between
 			margin: 0 auto
 			max-width: 90%
