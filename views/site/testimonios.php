@@ -72,7 +72,7 @@ $this->registerJsFile(
                 ?>
                     
                     <div class="testimonios-imagenes-col-a">
-                        <figure class="card-img-top card-imagen-bg overlay-hover overlay" style="background-image: url(<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>);">
+                        <figure class="card-img-top card-imagen-bg overlay-hover overlay" style="background-image: url('<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>');">
                             <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
                                 <a class="icon js-testimonios-imagen wb-image" href="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>"></a>
                             </figcaption>
