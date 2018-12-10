@@ -21,6 +21,11 @@ $this->registerCssFile(
 );
 
 $this->registerJsFile(
+    '@web/webAssets/js/site/testimonios.js',
+    ['depends' => [AppAsset::className()]]
+);
+
+$this->registerJsFile(
     '@web/webAssets/templates/classic/topbar/assets/examples/js/pages/gallery.js',
     ['depends' => [AppAsset::className()]]
 );
@@ -41,12 +46,24 @@ $this->registerJsFile(
     </div>
     
     <div class="testimonios-textos">
-        
-        <div class="testimonios-imagenes-row">
+
+        <div class="testimonios-imagenes-title">
 
             <div class="testimonios-subtitle">
                 <h3>Imágenes</h3>
             </div>
+
+        </div>
+
+        <div class="testimonios-videos-title">
+
+            <div class="testimonios-subtitle">
+                <h3>Vídeos</h3>
+            </div>
+
+        </div>
+        
+        <div class="testimonios-imagenes-row">
 
             <div class="testimonios-imagenes-col">
                 <?php
@@ -55,13 +72,12 @@ $this->registerJsFile(
                 ?>
                     
                     <div class="testimonios-imagenes-col-a">
-                        <figure class="card-img-top overlay-hover overlay">
-                            <img src="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>" alt="">
+                        <figure class="card-img-top card-imagen-bg overlay-hover overlay" style="background-image: url('<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>');">
                             <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
-                                <a class="icon wb-search wb-image" href="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>"></a>
+                                <a class="icon js-testimonios-imagen wb-image" href="<?= Constantes::URL_ADMIN . "/" . $imagen->txt_url?>"></a>
                             </figcaption>
-                            <p class="card-block"><?= $imagen->txt_nombre ?></p>
                         </figure>
+                        <p class="card-block"><?= $imagen->txt_nombre ?></p>
                     </div>
                 
                 <?php
@@ -72,10 +88,6 @@ $this->registerJsFile(
         </div>
 
         <div class="testimonios-videos-row">
-
-            <div class="testimonios-subtitle">
-                <h3>Vídeos</h3>
-            </div>
             
             <div class="testimonios-videos-col">
                 <?php
@@ -102,10 +114,10 @@ $this->registerJsFile(
                             </video> 
 
                             <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
-                                <a class="icon wb-search wb-play mfp-iframe" href="<?= $video->txt_url ?>"></a>
+                                <a class="icon js-testimonios-video wb-play mfp-iframe" href="<?= $video->txt_url ?>"></a>
                             </figcaption>
-                            <p class="card-block"><?= $video->txt_nombre ?></p>
                         </figure>
+                        <p class="card-block"><?= $video->txt_nombre ?></p>
                     </div>
             
                 <?php

@@ -41,16 +41,16 @@ header.header
 			transform: scaleX(-1)
 
 footer.footer
-	// background-color: rgba($secondary,.3)
 	bottom: 0
+	height: 50px
 	left: 0
 	padding-left: 32px
 	position: fixed
 	right: 0
 	z-index: -1
 	img.img-gepp
-		margin-bottom: 32px
-		width: 100px
+		margin-bottom: 8px
+		height: 90%
 
 .dashboard
 	background-image: url('../images/bkgd.jpg')
@@ -722,34 +722,37 @@ footer.footer
 	position: relative
 	width: 100%
 	z-index: 2
+
 	.contend
 		min-height: 100vh
 		width: 100%
+
 	.testimonios-contend
 		align-items: flex-start
 		// background-color: rgba(red,.3)
 		display: flex
-		flex-wrap: wrap
-		justify-content: center
+		flex-direction: column
+		justify-content: flex-start
 		.testimonios-title
+			// background-color: yellow
 			align-items: center
 			display: flex
 			justify-content: flex-start
-			margin-top: 80px
+			margin-top: 40px
 			padding: 0 32px
 			width: 100%
 			img
-				height: 120px
+				height: 80px
 				margin-right: 2vw
 			h2
 				color: $white
-				font-size: 3.6rem
+				font-size: 2.8rem
 				@extend .fw-bold
 				line-height: 1
 				text-transform: uppercase
 
 		.testimonios-subtitle
-			margin-bottom: 32px
+			margin-bottom: 8px
 			padding: 0 24px
 			width: 100%
 			h3
@@ -757,9 +760,10 @@ footer.footer
 				text-transform: uppercase
 
 		.testimonios-textos
+			// background-color: green
 			display: flex
 			flex-wrap: wrap
-			height: 40vh
+			height: calc(100vh - 180px)
 			justify-content: space-between
 			margin: 0 auto
 			max-width: 90%
@@ -767,14 +771,22 @@ footer.footer
 			overflow: hidden
 			width: 1024px
 
+			.testimonios-imagenes-title,
+			.testimonios-videos-title
+				display: flex
+				flex-wrap: wrap
+				overflow-y: auto
+				padding: 0
+				width: 50%
+
 			.testimonios-imagenes-row,
 			.testimonios-videos-row
 				display: flex
 				flex-wrap: wrap
-				min-height: 100%
-				height: 100%
+				min-height: calc(90% - 38px)
+				height: calc(100% - 38px)
 				overflow-y: auto
-				padding: 0 16px
+				padding: 0
 				width: 50%
 
 				.testimonios-imagenes-col,
@@ -784,7 +796,7 @@ footer.footer
 					// min-height: 100%
 					// height: 100%
 					// overflow-y: auto
-					padding: 0 24px
+					padding: 0 12px
 					width: 100%
 
 					.overlay-video
@@ -809,9 +821,9 @@ footer.footer
 					p
 						color: $white
 						font-size: 1rem
-						padding: 12px 8px 8px
+						padding: 8px 8px
 						position: relative
-						z-index: 6
+						z-index: 12
 						
 
 			.testimonios-imagenes-row
@@ -819,11 +831,22 @@ footer.footer
 				.testimonios-imagenes-col
 
 					.testimonios-imagenes-col-a
-						margin-bottom: 24px
+						margin-bottom: 0
 						margin-right: 10%
+						min-height: 120px
+						padding-top: 16px
 						width: 45%
 						&:nth-child(2n + 2)
 							margin-right: 0
+
+						figure
+							box-shadow: -6px -6px 16px -7px rgba($black, .58)
+
+						.card-imagen-bg
+							background-position: 50%
+							background-repeat: no-repeat
+							background-size: cover
+							min-height: 120px
 						
 						img
 							max-width: 100%
@@ -835,11 +858,20 @@ footer.footer
 				.testimonios-videos-col
 				
 					.testimonios-imagenes-col-b
-						margin-bottom: 24px
+						margin-bottom: 0
+						height: 260px
+						padding-top: 16px
 						width: 98%
+						figure
+							box-shadow: -6px -6px 16px -7px rgba($black, .58)
+							height: calc(100% - 40px)
+
 						img
 							max-width: 100%
 							width: 100%
+
+						.icon
+							background-color: rgba($black, .7)
 
 
 .login-page
